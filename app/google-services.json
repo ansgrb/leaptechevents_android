@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "669625071498",
+    "project_id": "leap-tech-events-android",
+    "storage_bucket": "leap-tech-events-android.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:669625071498:android:140973bfd556c5761aba73",
+        "android_client_info": {
+          "package_name": "com.github.ansgrb.leaptechevents_android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI4LkjB7CArhzh7ikp3VxjX1BcXsgZgkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
