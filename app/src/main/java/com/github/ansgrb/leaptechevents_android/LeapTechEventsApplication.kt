@@ -16,4 +16,8 @@
  */
 package com.github.ansgrb.leaptechevents_android
 
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
+class LeapTechEventsApplication : Application()

@@ -14,7 +14,9 @@ import com.github.ansgrb.leaptechevents_android.presentation.screens.EventListSc
 import com.github.ansgrb.leaptechevents_android.presentation.screens.LoginScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.TicketHistoryScreen
 import com.github.ansgrb.leaptechevents_android.ui.theme.LeapTechEventsAndroidTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
