@@ -16,6 +16,14 @@
  */
 package com.github.ansgrb.leaptechevents_android.data.di
 
+import com.github.ansgrb.leaptechevents_android.data.repositories.EventRepositoryImpl
+import com.github.ansgrb.leaptechevents_android.data.repositories.StorageRepositoryImpl
+import com.github.ansgrb.leaptechevents_android.data.repositories.TicketRepositoryImpl
+import com.github.ansgrb.leaptechevents_android.data.repositories.UserRepositoryImpl
+import com.github.ansgrb.leaptechevents_android.domain.repositories.EventRepository
+import com.github.ansgrb.leaptechevents_android.domain.repositories.StorageRepository
+import com.github.ansgrb.leaptechevents_android.domain.repositories.TicketRepository
+import com.github.ansgrb.leaptechevents_android.domain.repositories.UserRepository
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -40,5 +48,23 @@ object DataModule {
     @Singleton
     fun provideStorage(): FirebaseStorage = FirebaseStorage.getInstance()
 
-    // TODO: repositories to be added in later.....
+    @Provides
+    @Singleton
+    fun provideEventRepository(firestore: FirebaseFirestore, storageRepository: StorageRepository): EventRepository =
+        EventRepositoryImpl(firestore, storageRepository)
+
+    @Provides
+    @Singleton
+    fun provideTicketRepository(firestore: FirebaseFirestore): TicketRepository =
+        TicketRepositoryImpl(firestore)
+
+    @Provides
+    @Singleton
+    fun provideUserRepository(auth: FirebaseAuth): UserRepository =
+        UserRepositoryImpl(auth)
+
+    @Provides
+    @Singleton
+    fun provideStorageRepository(storage: FirebaseStorage): StorageRepository =
+        StorageRepositoryImpl(storage)
 }
