@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.github.ansgrb.leaptechevents_android.presentation.screens.ETicketScreen
+import com.github.ansgrb.leaptechevents_android.presentation.screens.EventDetailScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.EventListScreen
 import com.github.ansgrb.leaptechevents_android.ui.theme.LeapTechEventsAndroidTheme
 
@@ -26,7 +27,10 @@ class MainActivity : ComponentActivity() {
                         EventListScreen(navController)
                     }
                     composable("event_detail/{eventId}") { backStackEntry ->
-                        // TODO : Handle event detail logic
+                        EventDetailScreen(
+                            navController,
+                            backStackEntry.arguments?.getString("eventId") ?: ""
+                        )
                     }
                     composable("booking/{eventId}") { backStackEntry ->
                         // TODO: Handle booking logic
