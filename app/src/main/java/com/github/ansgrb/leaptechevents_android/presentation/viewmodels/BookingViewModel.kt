@@ -50,12 +50,11 @@ class BookingViewModel @Inject constructor(
     val currentUserId: String?
         get() = auth.currentUser?.uid
 
-    suspend fun bookTicket(eventId: String, userId: String, onSuccess: (Ticket) -> Unit) {
+    fun bookTicket(eventId: String, userId: String, onSuccess: (Ticket) -> Unit) {
         viewModelScope.launch {
             try {
                 val ticket = bookTicketUseCase(eventId, userId)
                 val qrBitmap = generateQRCode("${ticket.id},${ticket.eventId},${ticket.status}")
-                // update ticket with QR data (base64 encode bitmap or URL)
                 val updatedTicket = ticket.copy(qrCode = bitmapToString(qrBitmap))
                 _ticketWithQR.value = updatedTicket
                 _isBookingSuccess.value = true
