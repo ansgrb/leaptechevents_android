@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.github.ansgrb.leaptechevents_android.presentation.screens.ETicketScreen
 import com.github.ansgrb.leaptechevents_android.ui.theme.LeapTechEventsAndroidTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,13 +31,9 @@ class MainActivity : ComponentActivity() {
                         // TODO: Handle booking logic
                     }
                     composable("e_ticket/{ticketId}") { backStackEntry ->
-                        // TODO: Handle e-ticket logic
-                    }
+                        ETicketScreen(navController, backStackEntry.arguments?.getString("ticketId") ?: "")                    }
                     composable("ticket_history") {
                         // TODO: Handle ticket history logic
-                    }
-                    composable("qr_scanner") {
-                        // TODO: Handle QR scanner logic
                     }
                 }
             }

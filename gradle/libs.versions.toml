@@ -1,5 +1,6 @@
 [versions]
 agp = "8.10.1"
+zxCore = "3.5.2"
 kotlin = "2.1.21"
 coreKtx = "1.16.0"
 junit = "4.13.2"
@@ -27,11 +28,13 @@ coreSplashscreen = "1.0.1"
 mockito = "5.17.0"
 googleServices = "4.4.2"
 firebaseCrashlyticsPlugin = "3.0.4"
+qrcode = "1.0.2"
 
 
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+zx-core = { module = "com.google.zxing:core", version.ref = "zxCore" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -61,6 +64,7 @@ mlkit-barcode-scanning = { group = "com.google.mlkit", name = "barcode-scanning"
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+qrcode = { group = "androidmads.library", name = "qrcodegenerator", version.ref = "qrcode" }
 mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
 
 [plugins]

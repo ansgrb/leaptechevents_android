@@ -82,8 +82,8 @@ dependencies {
     // Image loading
     implementation(libs.coil.compose)
 
-    // QR scanning
-    implementation(libs.mlkit.barcode.scanning)
+    // ZXing for QR code generation
+    implementation(libs.zx.core)
 
     // Testing
     testImplementation(libs.junit)
