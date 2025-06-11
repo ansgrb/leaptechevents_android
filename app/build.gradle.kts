@@ -2,11 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.google.ksp)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.google.services)
     alias(libs.plugins.firebase.crashlytics)
-    alias(libs.plugins.google.hilt)
 }
 
 android {
@@ -60,9 +60,9 @@ dependencies {
 
 
     // Hilt for dependency injection
-    implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     // Networking
     implementation(libs.retrofit)
