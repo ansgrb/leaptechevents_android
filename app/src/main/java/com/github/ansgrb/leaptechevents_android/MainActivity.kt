@@ -12,6 +12,7 @@ import com.github.ansgrb.leaptechevents_android.presentation.screens.ETicketScre
 import com.github.ansgrb.leaptechevents_android.presentation.screens.EventDetailScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.EventListScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.LoginScreen
+import com.github.ansgrb.leaptechevents_android.presentation.screens.TicketHistoryScreen
 import com.github.ansgrb.leaptechevents_android.ui.theme.LeapTechEventsAndroidTheme
 
 class MainActivity : ComponentActivity() {
@@ -47,7 +48,7 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                     composable("ticket_history") {
-                        // TODO: Handle ticket history logic
+                        TicketHistoryScreen(navController)
                     }
                 }
             }
