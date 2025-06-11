@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.github.ansgrb.leaptechevents_android.presentation.screens.ETicketScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.EventDetailScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.EventListScreen
+import com.github.ansgrb.leaptechevents_android.presentation.screens.LoginScreen
 import com.github.ansgrb.leaptechevents_android.ui.theme.LeapTechEventsAndroidTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 NavHost(navController, startDestination = "login") {
                     composable("login") {
-                        // TODO: Handle login logic
+                        LoginScreen(navController)
                     }
                     composable("event_list") {
                         EventListScreen(navController)
