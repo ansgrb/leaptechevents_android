@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.github.ansgrb.leaptechevents_android.presentation.screens.BookingScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.ETicketScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.EventDetailScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.EventListScreen
@@ -30,16 +31,19 @@ class MainActivity : ComponentActivity() {
                     composable("event_detail/{eventId}") { backStackEntry ->
                         EventDetailScreen(
                             navController,
-                            backStackEntry.arguments?.getString("eventId") ?: ""
+                            eventId = backStackEntry.arguments?.getString("eventId") ?: ""
                         )
                     }
                     composable("booking/{eventId}") { backStackEntry ->
-                        // TODO: Handle booking logic
+                        BookingScreen(
+                            navController,
+                            eventId = backStackEntry.arguments?.getString("eventId") ?: ""
+                        )
                     }
                     composable("e_ticket/{ticketId}") { backStackEntry ->
                         ETicketScreen(
                             navController,
-                            backStackEntry.arguments?.getString("ticketId") ?: ""
+                            ticketId = backStackEntry.arguments?.getString("ticketId") ?: ""
                         )
                     }
                     composable("ticket_history") {
