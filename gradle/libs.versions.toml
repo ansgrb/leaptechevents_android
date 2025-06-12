@@ -1,6 +1,5 @@
 [versions]
 agp = "8.10.1"
-constraintlayoutCompose = "1.1.1"
 zxCore = "3.5.2"
 kotlin = "2.0.21"
 ksp = "2.0.21-1.0.28"
@@ -30,12 +29,10 @@ mockito = "5.17.0"
 googleServices = "4.4.2"
 firebaseCrashlyticsPlugin = "3.0.4"
 qrcode = "1.0.2"
-firebaseDatabase = "21.0.0"
 
 
 
 [libraries]
-androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 zx-core = { module = "com.google.zxing:core", version.ref = "zxCore" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -73,7 +70,6 @@ coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coi
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
-firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 
 [plugins]
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
