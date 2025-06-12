@@ -20,7 +20,7 @@ import com.github.ansgrb.leaptechevents_android.domain.models.User
 import com.github.ansgrb.leaptechevents_android.domain.repositories.UserRepository
 import javax.inject.Inject
 
-class LoginUseCase @Inject constructor(
+open class LoginUseCase @Inject constructor(
     private val userRepository: UserRepository,
 ) {
     suspend operator fun invoke(email: String, password: String): User? =
