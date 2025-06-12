@@ -16,6 +16,7 @@
  */
 package com.github.ansgrb.leaptechevents_android.presentation.screens
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -28,14 +29,23 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.github.ansgrb.leaptechevents_android.domain.models.User
+import com.github.ansgrb.leaptechevents_android.domain.repositories.UserRepository
+import com.github.ansgrb.leaptechevents_android.domain.usecases.LoginUseCase
 import com.github.ansgrb.leaptechevents_android.presentation.viewmodels.LoginViewModel
+import com.github.ansgrb.leaptechevents_android.ui.theme.LeapTechEventsAndroidTheme
 import kotlinx.coroutines.launch
 
 @Composable
-fun LoginScreen(navController: NavController, viewModel: LoginViewModel = hiltViewModel()) {
+fun LoginScreen(
+    navController: NavController,
+    viewModel: LoginViewModel = hiltViewModel(),
+) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     val scope = rememberCoroutineScope()
@@ -64,3 +74,37 @@ fun LoginScreen(navController: NavController, viewModel: LoginViewModel = hiltVi
         }
     }
 }
+
+@Preview(
+    name = "Light Mode",
+    showBackground = true,
+    uiMode = Configuration.UI_MODE_NIGHT_NO,
+    showSystemUi = true
+)
+@Preview(
+    name = "Dark Mode",
+    showBackground = true,
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+    showSystemUi = true
+)
+@Composable
+fun LoginScreenPreview() {
+    LeapTechEventsAndroidTheme {
+        val previewNavController = rememberNavController()
+        val previewViewModel = remember {
+            LoginViewModel(FakeLoginUseCase())
+        }
+
+        LoginScreen(
+            navController = previewNavController,
+            viewModel = previewViewModel
+        )
+    }
+}
+
+// helper class for preview
+private class FakeUserRepository : UserRepository {
+    override suspend fun login(email: String, password: String): User? = null
+}
+
+private class FakeLoginUseCase : LoginUseCase(FakeUserRepository())

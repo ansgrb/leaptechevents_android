@@ -29,6 +29,7 @@ mockito = "5.17.0"
 googleServices = "4.4.2"
 firebaseCrashlyticsPlugin = "3.0.4"
 qrcode = "1.0.2"
+firebaseDatabase = "21.0.0"
 
 
 
@@ -70,6 +71,7 @@ coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coi
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 mockito-core = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 
 [plugins]
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
