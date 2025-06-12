@@ -167,11 +167,13 @@ fun LoginScreen(
     name = "Light Mode",
     showBackground = true,
     uiMode = Configuration.UI_MODE_NIGHT_NO,
+    showSystemUi = true
 )
 @Preview(
     name = "Dark Mode",
     showBackground = true,
     uiMode = Configuration.UI_MODE_NIGHT_YES,
+    showSystemUi = true
 )
 @Composable
 fun LoginScreenPreview() {
