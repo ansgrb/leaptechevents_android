@@ -1,5 +1,6 @@
 [versions]
 agp = "8.10.1"
+constraintlayoutCompose = "1.1.1"
 zxCore = "3.5.2"
 kotlin = "2.0.21"
 ksp = "2.0.21-1.0.28"
@@ -34,6 +35,7 @@ firebaseDatabase = "21.0.0"
 
 
 [libraries]
+androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 zx-core = { module = "com.google.zxing:core", version.ref = "zxCore" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
