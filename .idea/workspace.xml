@@ -9,7 +9,24 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c08a2830-4432-4336-988d-7cc1ebbb876a" name="Changes" comment="refactor: Update LoginScreen UI using ConstraintLayout&#10;&#10;- Replaced `Column` with `ConstraintLayout` for more flexible UI design.&#10;- Added a &quot;Welcome Back&quot; title.&#10;- Styled `OutlinedTextField` for email and password inputs with leading icons.&#10;- Implemented keyboard options for email and password fields (Email, Password, Next, Done).&#10;- Styled the &quot;Login&quot; button with a rounded shape and adjusted its height and text style.&#10;- Added `androidx.constraintlayout:constraintlayout-compose` dependency." />
+    <list default="true" id="c08a2830-4432-4336-988d-7cc1ebbb876a" name="Changes" comment="feat: Enhance Splash Screen with Gradient Button and Navigation&#10;&#10;- Add a &quot;Get Started&quot; `GradientButton` to `SplashScreen.kt`.&#10;- Implement navigation from `SplashActivity` to `MainActivity` on button click.&#10;- Make `SplashActivity` the launcher activity in `AndroidManifest.xml`.&#10;- Update theme `Theme.LeapTechEventsAndroid` to inherit from `Theme.AppCompat.Light.NoActionBar`.&#10;- Remove `app/build.gradle` and `.env.example` as they are no longer needed.&#10;- Update IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/deploymentTargetSelector.xml`).&#10;- Remove unused module file `.idea/modules/app/Leap_Tech_Events_-_Android.app.iml`.">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Leap_Tech_Events_-_Android.app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/SplashActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/components/GradientButton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/components/GradientButton.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,6 +107,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -97,22 +115,22 @@
     &quot;assignee&quot;: &quot;ansgrb&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ansgrb/leaptechevents_android.git",
-    "accountId": "2b41818e-6919-4e46-8b9c-2d3fc2f05af2"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ansgrb/leaptechevents_android.git&quot;,
+    &quot;accountId&quot;: &quot;2b41818e-6919-4e46-8b9c-2d3fc2f05af2&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "ansgrb",
-    "repository": "leaptechevents_android"
+    &quot;owner&quot;: &quot;ansgrb&quot;,
+    &quot;repository&quot;: &quot;leaptechevents_android&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -134,7 +152,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "#2 on dev",
+    "git-widget-placeholder": "dev",
     "settings.editor.selected.configurable": "build.tools"
   }
 }]]></component>
@@ -235,6 +253,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
+        <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
+        <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
+        <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
         <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
       </list>
     </recent_temporary>
@@ -452,19 +474,21 @@
     <MESSAGE value="build: Configure Hilt and update dependencies&#10;&#10;- Add Hilt for dependency injection by:&#10;    - Adding `@HiltAndroidApp` to `LeapTechEventsApplication.kt`.&#10;    - Adding `@AndroidEntryPoint` to `MainActivity.kt`.&#10;    - Updating `app/build.gradle.kts` with Hilt and KSP plugin aliases and dependencies.&#10;    - Updating `build.gradle.kts` (project level) with Hilt and KSP plugin aliases.&#10;    - Updating `AndroidManifest.xml` to specify `LeapTechEventsApplication` as the application name.&#10;- Update Kotlin version to 2.0.21 and KSP version to 2.0.21-1.0.28 in `gradle/libs.versions.toml`.&#10;- Update various `.idea` configuration files.&#10;- Add Kotlin error log files to `.kotlin/errors/`." />
     <MESSAGE value="feat: Add Firebase Realtime Database and Login Screen previews&#10;&#10;- Integrate Firebase Realtime Database dependency.&#10;- Add light and dark mode previews for `LoginScreen.kt` using a fake `LoginViewModel` and `LoginUseCase`.&#10;- Modify `LoginViewModel` and `LoginUseCase` to be open for extension in preview fakes." />
     <MESSAGE value="refactor: Update LoginScreen UI using ConstraintLayout&#10;&#10;- Replaced `Column` with `ConstraintLayout` for more flexible UI design.&#10;- Added a &quot;Welcome Back&quot; title.&#10;- Styled `OutlinedTextField` for email and password inputs with leading icons.&#10;- Implemented keyboard options for email and password fields (Email, Password, Next, Done).&#10;- Styled the &quot;Login&quot; button with a rounded shape and adjusted its height and text style.&#10;- Added `androidx.constraintlayout:constraintlayout-compose` dependency." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Update LoginScreen UI using ConstraintLayout&#10;&#10;- Replaced `Column` with `ConstraintLayout` for more flexible UI design.&#10;- Added a &quot;Welcome Back&quot; title.&#10;- Styled `OutlinedTextField` for email and password inputs with leading icons.&#10;- Implemented keyboard options for email and password fields (Email, Password, Next, Done).&#10;- Styled the &quot;Login&quot; button with a rounded shape and adjusted its height and text style.&#10;- Added `androidx.constraintlayout:constraintlayout-compose` dependency." />
+    <MESSAGE value="feat: Implement Splash Screen with Jetpack Compose&#10;&#10;This commit introduces a splash screen for the application, built using Jetpack Compose.&#10;&#10;Key changes:&#10;- Added `SplashActivity.kt` containing the `SplashScreen` Composable.&#10;- The splash screen features:&#10;    - A background image (`abstractbackground.png`).&#10;    - A title with styled text (&quot;Discover your Future Events Easily&quot;).&#10;    - A subtitle string.&#10;    - An image (`ticket_01.png`).&#10;- Added new color resources: `gold`, `pink`, `light_pink`, `light_purple`.&#10;- Added new string resource `subtitle_splash`.&#10;- Included new drawable assets: `abstractbackground.png`, `leaptechlogo.png`, `ticket_01.png`, and `ticket_04.png`.&#10;- Updated `AndroidManifest.xml` to declare `SplashActivity`.&#10;- Added dependencies for `appcompat`, `material`, and `activity` in `build.gradle.kts` and `libs.versions.toml`.&#10;- Configured Gradle JVM to `jbr-21` in `.idea/gradle.xml`.&#10;- Updated deployment target selector in `.idea/deploymentTargetSelector.xml`.&#10;- Added a `GradientButton.kt` Composable (currently a placeholder)." />
+    <MESSAGE value="feat: Enhance Splash Screen with Gradient Button and Navigation&#10;&#10;- Add a &quot;Get Started&quot; `GradientButton` to `SplashScreen.kt`.&#10;- Implement navigation from `SplashActivity` to `MainActivity` on button click.&#10;- Make `SplashActivity` the launcher activity in `AndroidManifest.xml`.&#10;- Update theme `Theme.LeapTechEventsAndroid` to inherit from `Theme.AppCompat.Light.NoActionBar`.&#10;- Remove `app/build.gradle` and `.env.example` as they are no longer needed.&#10;- Update IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/deploymentTargetSelector.xml`).&#10;- Remove unused module file `.idea/modules/app/Leap_Tech_Events_-_Android.app.iml`." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Enhance Splash Screen with Gradient Button and Navigation&#10;&#10;- Add a &quot;Get Started&quot; `GradientButton` to `SplashScreen.kt`.&#10;- Implement navigation from `SplashActivity` to `MainActivity` on button click.&#10;- Make `SplashActivity` the launcher activity in `AndroidManifest.xml`.&#10;- Update theme `Theme.LeapTechEventsAndroid` to inherit from `Theme.AppCompat.Light.NoActionBar`.&#10;- Remove `app/build.gradle` and `.env.example` as they are no longer needed.&#10;- Update IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/deploymentTargetSelector.xml`).&#10;- Remove unused module file `.idea/modules/app/Leap_Tech_Events_-_Android.app.iml`." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
       <map>
         <entry key="com.github.ansgrb.leaptechevents_android">
           <value>
-            <CheckInfo lastCheckTimestamp="1749614543131" />
+            <CheckInfo lastCheckTimestamp="1749736161152" />
           </value>
         </entry>
         <entry key="com.github.ansgrb.leaptechevents_android.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1749614543129" />
+            <CheckInfo lastCheckTimestamp="1749736161156" />
           </value>
         </entry>
       </map>
