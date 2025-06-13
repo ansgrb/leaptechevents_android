@@ -1,9 +1,12 @@
 package com.github.ansgrb.leaptechevents_android
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -24,20 +27,31 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.github.ansgrb.leaptechevents_android.presentation.components.GradientButton
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            SplashScreen(
+                onGetStartedClick = {
+                    startActivity(Intent(this, MainActivity::class.java))
+                }
+            )
+        }
     }
 }
 
 @Composable
 @Preview
-fun SplashScreen() {
+fun SplashScreen(
+    onGetStartedClick: () -> Unit = {},
+) {
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        ConstraintLayout() {
+        ConstraintLayout {
             val (
                 background,
                 logo,
@@ -119,6 +133,23 @@ fun SplashScreen() {
                         end.linkTo(parent.end)
                     }
             )
+
+            // start button
+            Box(
+                modifier = Modifier
+                    .constrainAs(startbtn) {
+                        bottom.linkTo(parent.bottom)
+//                        start.linkTo(parent.start)
+//                        end.linkTo(parent.end)
+                    }
+            ) {
+                GradientButton(
+                    onClick = onGetStartedClick,
+                    text = "Get Started",
+                    padding = 32
+                )
+            }
+
         }
     }
 }
