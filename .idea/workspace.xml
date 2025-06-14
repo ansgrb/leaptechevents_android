@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c08a2830-4432-4336-988d-7cc1ebbb876a" name="Changes" comment="feat: Enhance Splash Screen with Gradient Button and Navigation&#10;&#10;- Add a &quot;Get Started&quot; `GradientButton` to `SplashScreen.kt`.&#10;- Implement navigation from `SplashActivity` to `MainActivity` on button click.&#10;- Make `SplashActivity` the launcher activity in `AndroidManifest.xml`.&#10;- Update theme `Theme.LeapTechEventsAndroid` to inherit from `Theme.AppCompat.Light.NoActionBar`.&#10;- Remove `app/build.gradle` and `.env.example` as they are no longer needed.&#10;- Update IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/deploymentTargetSelector.xml`).&#10;- Remove unused module file `.idea/modules/app/Leap_Tech_Events_-_Android.app.iml`.">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/screens/GetStartedScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -19,13 +19,14 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/Leap_Tech_Events_-_Android.app.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/SplashActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/SplashActivity.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/components/GradientButton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/components/GradientButton.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +154,9 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "dev",
+    "project.structure.last.edited": "Dependencies",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "build.tools"
   }
 }]]></component>
@@ -438,7 +442,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749722856947</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feat: Enhance Splash Screen with Gradient Button and Navigation&#10;&#10;- Add a &quot;Get Started&quot; `GradientButton` to `SplashScreen.kt`.&#10;- Implement navigation from `SplashActivity` to `MainActivity` on button click.&#10;- Make `SplashActivity` the launcher activity in `AndroidManifest.xml`.&#10;- Update theme `Theme.LeapTechEventsAndroid` to inherit from `Theme.AppCompat.Light.NoActionBar`.&#10;- Remove `app/build.gradle` and `.env.example` as they are no longer needed.&#10;- Update IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/deploymentTargetSelector.xml`).&#10;- Remove unused module file `.idea/modules/app/Leap_Tech_Events_-_Android.app.iml`.">
+      <option name="closed" value="true" />
+      <created>1749809299959</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1749809299959</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -483,12 +495,12 @@
       <map>
         <entry key="com.github.ansgrb.leaptechevents_android">
           <value>
-            <CheckInfo lastCheckTimestamp="1749736161152" />
+            <CheckInfo lastCheckTimestamp="1749828975037" />
           </value>
         </entry>
         <entry key="com.github.ansgrb.leaptechevents_android.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1749736161156" />
+            <CheckInfo lastCheckTimestamp="1749828975040" />
           </value>
         </entry>
       </map>
