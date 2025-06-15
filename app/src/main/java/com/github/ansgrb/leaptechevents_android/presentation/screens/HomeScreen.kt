@@ -153,7 +153,7 @@ fun HomeScreen(
 //                                contentScale = ContentScale.Crop
 //                            )
                             Image(
-                                painter = painterResource(id = R.drawable.mainevent_03),
+                                painter = painterResource(id = R.drawable.mainevent_01),
                                 contentDescription = "Main Event",
                                 modifier = Modifier.fillMaxSize(),
                                 contentScale = ContentScale.Crop
