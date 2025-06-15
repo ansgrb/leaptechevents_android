@@ -16,6 +16,7 @@
  */
 package com.github.ansgrb.leaptechevents_android.presentation.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -43,8 +44,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.github.ansgrb.leaptechevents_android.R
 import com.github.ansgrb.leaptechevents_android.data.Event
 
@@ -86,14 +92,6 @@ fun HomeScreen(
                 )
             )
         },
-        modifier = TODO(),
-        bottomBar = TODO(),
-        snackbarHost = TODO(),
-        floatingActionButton = TODO(),
-        floatingActionButtonPosition = TODO(),
-        containerColor = TODO(),
-        contentColor = TODO(),
-        contentWindowInsets = TODO(),
         content = { paddingValues ->
             LazyColumn(
                 modifier = Modifier
@@ -109,13 +107,46 @@ fun HomeScreen(
                                 .height(200.dp)
                                 .clip(RoundedCornerShape(8.dp))
                                 .clickable {
-                                    onEventClick(Event(1, "Main Event", "https://example.com/image.jpg"))
+                                    onEventClick(Event(1, "Main Event", "https://collection.cloudinary.com/dsswvewxx/ba36173a7df92e2ca78d8d0f19d84676"))
                                 }
-                        )
+                        ) {
+                            AsyncImage(
+                                model = "https://collection.cloudinary.com/dsswvewxx/ba36173a7df92e2ca78d8d0f19d84676",
+                                contentDescription = "Main Event",
+                                modifier = Modifier.fillMaxSize(),
+                                contentScale = ContentScale.Crop
+                            )
+                            Column(
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .background(Color.Black.copy(alpha = 0.5f))
+                                    .padding(16.dp),
+                                verticalArrangement = Arrangement.Bottom,
+                                horizontalAlignment = Alignment.End
+                            ) {
+                                Image(
+                                    painter = painterResource(R.drawable.leaptechlogo),
+                                    contentDescription = "LeapTech Logo",
+                                    modifier = Modifier.height(20.dp)
+                                )
+                            }
+                        }
                     }
                 }
             }
         }
 
+    )
+}
+
+@Preview
+@Composable
+fun HomeScreenPreview() {
+    HomeScreen(
+        onEventClick = {},
+        onSearchClick = {},
+        onMyTicketsClick = {},
+        onSignInClick = {},
+        onMenuClick = {}
     )
 }

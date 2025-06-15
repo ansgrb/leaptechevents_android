@@ -9,13 +9,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c08a2830-4432-4336-988d-7cc1ebbb876a" name="Changes" comment="feat: Introduce Get Started Screen and Refactor Splash&#10;&#10;This commit introduces a new `GetStartedScreen` and refactors the initial app flow.&#10;&#10;Key changes:&#10;- Created `GetStartedScreen.kt`:&#10;    - Displays a title, subtitle, and an image (`ticket_01.png`).&#10;    - Features a &quot;Get Started&quot; `GradientButton`.&#10;    - Uses a vertical gradient background with `dark_purple` and `light_purple`.&#10;- Updated `MainActivity.kt`:&#10;    - Set `get_started` as the initial route in `NavHost`.&#10;    - Navigation from `GetStartedScreen` to `LoginScreen` on button click.&#10;- Removed `SplashActivity.kt` as its functionality is replaced by `GetStartedScreen`.&#10;- Updated `AndroidManifest.xml`:&#10;    - `MainActivity` is now the launcher activity.&#10;- Modified `GradientButton.kt`:&#10;    - Refactored to use a horizontal gradient for the button background.&#10;    - Improved styling and layout.&#10;- Updated `colors.xml`:&#10;    - Added `dark_purple` color resource.&#10;- Updated `strings.xml`:&#10;    - Modified `subtitle_splash` for brevity.&#10;- Cleaned up `app/build.gradle.kts` by removing extra newlines.">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/data/DummyData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/screens/HomeScreen.kt" afterDir="false" />
+    <list default="true" id="c08a2830-4432-4336-988d-7cc1ebbb876a" name="Changes" comment="feat: Initial setup for HomeScreen with placeholder content&#10;&#10;This commit introduces the `HomeScreen.kt` Composable and basic data structures for events.&#10;&#10;Key changes:&#10;- Created `HomeScreen.kt`:&#10;    - Uses `Scaffold` with a `TopAppBar`.&#10;    - `TopAppBar` includes a title &quot;LeapTech Events&quot;, a menu icon, and a profile icon.&#10;    - The content area is a `LazyColumn` with a `dark_purple` background.&#10;    - Includes a placeholder `Box` for an event item, which is clickable.&#10;    - Placeholder `TODO()` calls for `modifier`, `bottomBar`, `snackbarHost`, `floatingActionButton`, `floatingActionButtonPosition`, `containerColor`, `contentColor`, and `contentWindowInsets` within the `Scaffold`.&#10;- Created `DummyData.kt`:&#10;    - Defines an `Event` data class with various properties like `id`, `title`, `imageUrl`, `date`, `time`, etc.&#10;    - Includes lists of sample event data: `trendingEvents`, `musicEvents`, `entertainmentEvents`, and `otherEvents`.&#10;- Updated IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/misc.xml`).">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/screens/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/screens/HomeScreen.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,24 +137,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.LeapTechEventsAndroid [testDebugUnitTest].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Dependencies&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Android App.app.executor": "Run",
+    "Compose Preview.HomeScreenPreview.executor": "Run",
+    "Gradle.LeapTechEventsAndroid [testDebugUnitTest].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "dev",
+    "project.structure.last.edited": "Dependencies",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "build.tools"
   }
-}</component>
-  <component name="RunManager" selected="Android App.app">
+}]]></component>
+  <component name="RunManager" selected="Compose Preview.HomeScreenPreview">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Leap_Tech_Events_-_Android.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -222,6 +228,79 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HomeScreenPreview" type="ComposePreviewRunConfiguration" temporary="true">
+      <module name="Leap_Tech_Events_-_Android.app" />
+      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="--es composable com.github.ansgrb.leaptechevents_android.presentation.screens.HomeScreenKt.HomeScreenPreview" />
+      <option name="MODE" value="specific_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
+      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY" value="" />
+      <option name="ACTIVITY_CLASS" value="androidx.compose.ui.tooling.PreviewActivity" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="true" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <compose-preview-run-configuration composable-fqn="com.github.ansgrb.leaptechevents_android.presentation.screens.HomeScreenKt.HomeScreenPreview" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LeapTechEventsAndroid [testDebugUnitTest]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -246,7 +325,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
+        <item itemvalue="Compose Preview.HomeScreenPreview" />
         <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
         <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
         <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
@@ -447,7 +526,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749863667147</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="feat: Initial setup for HomeScreen with placeholder content&#10;&#10;This commit introduces the `HomeScreen.kt` Composable and basic data structures for events.&#10;&#10;Key changes:&#10;- Created `HomeScreen.kt`:&#10;    - Uses `Scaffold` with a `TopAppBar`.&#10;    - `TopAppBar` includes a title &quot;LeapTech Events&quot;, a menu icon, and a profile icon.&#10;    - The content area is a `LazyColumn` with a `dark_purple` background.&#10;    - Includes a placeholder `Box` for an event item, which is clickable.&#10;    - Placeholder `TODO()` calls for `modifier`, `bottomBar`, `snackbarHost`, `floatingActionButton`, `floatingActionButtonPosition`, `containerColor`, `contentColor`, and `contentWindowInsets` within the `Scaffold`.&#10;- Created `DummyData.kt`:&#10;    - Defines an `Event` data class with various properties like `id`, `title`, `imageUrl`, `date`, `time`, etc.&#10;    - Includes lists of sample event data: `trendingEvents`, `musicEvents`, `entertainmentEvents`, and `otherEvents`.&#10;- Updated IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/misc.xml`).">
+      <option name="closed" value="true" />
+      <created>1749932668989</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1749932668989</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -486,19 +573,20 @@
     <MESSAGE value="feat: Implement Splash Screen with Jetpack Compose&#10;&#10;This commit introduces a splash screen for the application, built using Jetpack Compose.&#10;&#10;Key changes:&#10;- Added `SplashActivity.kt` containing the `SplashScreen` Composable.&#10;- The splash screen features:&#10;    - A background image (`abstractbackground.png`).&#10;    - A title with styled text (&quot;Discover your Future Events Easily&quot;).&#10;    - A subtitle string.&#10;    - An image (`ticket_01.png`).&#10;- Added new color resources: `gold`, `pink`, `light_pink`, `light_purple`.&#10;- Added new string resource `subtitle_splash`.&#10;- Included new drawable assets: `abstractbackground.png`, `leaptechlogo.png`, `ticket_01.png`, and `ticket_04.png`.&#10;- Updated `AndroidManifest.xml` to declare `SplashActivity`.&#10;- Added dependencies for `appcompat`, `material`, and `activity` in `build.gradle.kts` and `libs.versions.toml`.&#10;- Configured Gradle JVM to `jbr-21` in `.idea/gradle.xml`.&#10;- Updated deployment target selector in `.idea/deploymentTargetSelector.xml`.&#10;- Added a `GradientButton.kt` Composable (currently a placeholder)." />
     <MESSAGE value="feat: Enhance Splash Screen with Gradient Button and Navigation&#10;&#10;- Add a &quot;Get Started&quot; `GradientButton` to `SplashScreen.kt`.&#10;- Implement navigation from `SplashActivity` to `MainActivity` on button click.&#10;- Make `SplashActivity` the launcher activity in `AndroidManifest.xml`.&#10;- Update theme `Theme.LeapTechEventsAndroid` to inherit from `Theme.AppCompat.Light.NoActionBar`.&#10;- Remove `app/build.gradle` and `.env.example` as they are no longer needed.&#10;- Update IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/deploymentTargetSelector.xml`).&#10;- Remove unused module file `.idea/modules/app/Leap_Tech_Events_-_Android.app.iml`." />
     <MESSAGE value="feat: Introduce Get Started Screen and Refactor Splash&#10;&#10;This commit introduces a new `GetStartedScreen` and refactors the initial app flow.&#10;&#10;Key changes:&#10;- Created `GetStartedScreen.kt`:&#10;    - Displays a title, subtitle, and an image (`ticket_01.png`).&#10;    - Features a &quot;Get Started&quot; `GradientButton`.&#10;    - Uses a vertical gradient background with `dark_purple` and `light_purple`.&#10;- Updated `MainActivity.kt`:&#10;    - Set `get_started` as the initial route in `NavHost`.&#10;    - Navigation from `GetStartedScreen` to `LoginScreen` on button click.&#10;- Removed `SplashActivity.kt` as its functionality is replaced by `GetStartedScreen`.&#10;- Updated `AndroidManifest.xml`:&#10;    - `MainActivity` is now the launcher activity.&#10;- Modified `GradientButton.kt`:&#10;    - Refactored to use a horizontal gradient for the button background.&#10;    - Improved styling and layout.&#10;- Updated `colors.xml`:&#10;    - Added `dark_purple` color resource.&#10;- Updated `strings.xml`:&#10;    - Modified `subtitle_splash` for brevity.&#10;- Cleaned up `app/build.gradle.kts` by removing extra newlines." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Introduce Get Started Screen and Refactor Splash&#10;&#10;This commit introduces a new `GetStartedScreen` and refactors the initial app flow.&#10;&#10;Key changes:&#10;- Created `GetStartedScreen.kt`:&#10;    - Displays a title, subtitle, and an image (`ticket_01.png`).&#10;    - Features a &quot;Get Started&quot; `GradientButton`.&#10;    - Uses a vertical gradient background with `dark_purple` and `light_purple`.&#10;- Updated `MainActivity.kt`:&#10;    - Set `get_started` as the initial route in `NavHost`.&#10;    - Navigation from `GetStartedScreen` to `LoginScreen` on button click.&#10;- Removed `SplashActivity.kt` as its functionality is replaced by `GetStartedScreen`.&#10;- Updated `AndroidManifest.xml`:&#10;    - `MainActivity` is now the launcher activity.&#10;- Modified `GradientButton.kt`:&#10;    - Refactored to use a horizontal gradient for the button background.&#10;    - Improved styling and layout.&#10;- Updated `colors.xml`:&#10;    - Added `dark_purple` color resource.&#10;- Updated `strings.xml`:&#10;    - Modified `subtitle_splash` for brevity.&#10;- Cleaned up `app/build.gradle.kts` by removing extra newlines." />
+    <MESSAGE value="feat: Initial setup for HomeScreen with placeholder content&#10;&#10;This commit introduces the `HomeScreen.kt` Composable and basic data structures for events.&#10;&#10;Key changes:&#10;- Created `HomeScreen.kt`:&#10;    - Uses `Scaffold` with a `TopAppBar`.&#10;    - `TopAppBar` includes a title &quot;LeapTech Events&quot;, a menu icon, and a profile icon.&#10;    - The content area is a `LazyColumn` with a `dark_purple` background.&#10;    - Includes a placeholder `Box` for an event item, which is clickable.&#10;    - Placeholder `TODO()` calls for `modifier`, `bottomBar`, `snackbarHost`, `floatingActionButton`, `floatingActionButtonPosition`, `containerColor`, `contentColor`, and `contentWindowInsets` within the `Scaffold`.&#10;- Created `DummyData.kt`:&#10;    - Defines an `Event` data class with various properties like `id`, `title`, `imageUrl`, `date`, `time`, etc.&#10;    - Includes lists of sample event data: `trendingEvents`, `musicEvents`, `entertainmentEvents`, and `otherEvents`.&#10;- Updated IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/misc.xml`)." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Initial setup for HomeScreen with placeholder content&#10;&#10;This commit introduces the `HomeScreen.kt` Composable and basic data structures for events.&#10;&#10;Key changes:&#10;- Created `HomeScreen.kt`:&#10;    - Uses `Scaffold` with a `TopAppBar`.&#10;    - `TopAppBar` includes a title &quot;LeapTech Events&quot;, a menu icon, and a profile icon.&#10;    - The content area is a `LazyColumn` with a `dark_purple` background.&#10;    - Includes a placeholder `Box` for an event item, which is clickable.&#10;    - Placeholder `TODO()` calls for `modifier`, `bottomBar`, `snackbarHost`, `floatingActionButton`, `floatingActionButtonPosition`, `containerColor`, `contentColor`, and `contentWindowInsets` within the `Scaffold`.&#10;- Created `DummyData.kt`:&#10;    - Defines an `Event` data class with various properties like `id`, `title`, `imageUrl`, `date`, `time`, etc.&#10;    - Includes lists of sample event data: `trendingEvents`, `musicEvents`, `entertainmentEvents`, and `otherEvents`.&#10;- Updated IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/misc.xml`)." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
       <map>
         <entry key="com.github.ansgrb.leaptechevents_android">
           <value>
-            <CheckInfo lastCheckTimestamp="1749828975037" />
+            <CheckInfo lastCheckTimestamp="1749974908764" />
           </value>
         </entry>
         <entry key="com.github.ansgrb.leaptechevents_android.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1749828975040" />
+            <CheckInfo lastCheckTimestamp="1749974908762" />
           </value>
         </entry>
       </map>
