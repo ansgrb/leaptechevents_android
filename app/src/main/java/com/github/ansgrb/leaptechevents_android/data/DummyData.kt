@@ -32,7 +32,7 @@ enum class EventType {
 data class Event(
     val id: Int = 0,
     val title: String = "Event Title",
-    val imageUrl: String = "https://collection.cloudinary.com/dsswvewxx/6da05f81b6967427b69bc74ba0dadb63",
+    val imageUrl: String = "https://res.cloudinary.com/dsswvewxx/image/upload/01_rlna9j.jpg",
     val date: String = "13-16 JUNE",
     val time: String = "7:00 PM",
     val location: String = "Kuwait",
@@ -45,13 +45,14 @@ data class Event(
 
 val trendingEvents = listOf(
     Event(
-        1,
-        "ورشة الرقص الشرقي للسيدات مع شيرين حجازي - Oriental Dance Workshop for Women by Sherin Hegazy",
-        "https://placehold.co/600x400",
+        id = 1,
+        title = "ورشة الرقص الشرقي للسيدات مع شيرين حجازي - Oriental Dance Workshop for Women by Sherin Hegazy",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/01_rlna9j.jpg",
         date = "Friday, June 20, 2025",
         time = "5:00 PM",
         location = "18 Emad El Deen Street, Cairo, Egypt",
         isTrending = true,
+        organizedBy = "Studio Emad Eddin",
         type = EventType.WORKSHOP,
         description = "Studio Emad Eddin is pleased to host a special Oriental Dance workshop for women led by dancer and trainer Sherin Hegazy.\n" +
                 "This workshop offers a safe, energy-filled space to explore oriental dance both as an art form and a powerful tool for reconnecting with the body, embracing femininity in a natural, free, and refined way.\n" +
@@ -67,72 +68,312 @@ val trendingEvents = listOf(
                 "https://forms.gle/NKYvjF8EeYokNhqZA\""
     ),
     Event(
-        2,
-        "Wagef! Comedian Mohamed Helmy",
-        "https://placehold.co/600x400",
+        id = 2,
+        title = "Grüne Fête de La Musique 3rd Edition | عيد الموسيقى والبيئة النسخة الثالثة",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/02_wwt2zm.jpg",
+        date = "Saturday, June 21, 2025",
+        time = "4:00 PM",
+        location = "The GrEEK Campus",
         isTrending = true,
-        type = EventType.COMEDY,
+        organizedBy = "Goethe-Institut Kairo",
+        type = EventType.MUSIC,
+        description = "Join us for the 3rd edition of the Grüne Fête de La Musique, a celebration of music and environmental awareness! This year, we are excited to bring you an unforgettable experience at The GrEEK Campus in Cairo.\n" +
+                "Date: Saturday, June 21, 2025\n" +
+                "Time: 4:00 PM onwards\n" +
+                "Location: The GrEEK Campus, Cairo\n" +
+                "Organized by: Goethe-Institut Kairo\n" +
+                "This event is not just about music; it's about making a positive impact on our environment. Enjoy live performances from talented artists while learning about sustainable practices and how we can all contribute to a greener future.\n" +
+                "Don't miss out on this unique opportunity to enjoy great music and support environmental initiatives. See you there!"
     ),
+    Event(
+        id = 3,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
+    ),
+
 )
 
 val musicEvents = listOf(
     Event(
-        3,
-        "Lost In Sound",
-        "https://placehold.co/600x400",
-        type = EventType.MUSIC,
-        date = "June 18th, 2025",
+        id = 4,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
     Event(
-        4, "Firket Al Akhwa", "https://placehold.co/600x400",
-        type = EventType.MUSIC,
+        id = 5,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
 )
 
 val entertainmentEvents = listOf(
     Event(
-        5,
-        "Tamer Hosny & Tamer Ashour",
-        "https://placehold.co/600x400",
-        type = EventType.ENTERTAINMENT,
-        date = "13 JUN",
+        id = 3,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
     Event(
-        6,
-        "Angham",
-        "https://placehold.co/600x400",
-        type = EventType.ENTERTAINMENT,
-        date = "20 JUNE",
+        id = 3,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
     Event(
-        7, "J's World - Experience", "https://placehold.co/600x400", type = EventType.ENTERTAINMENT,
+        id = 3,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
     Event(
-        8, "Al Qarya Al Tarfihiya", "https://placehold.co/600x400", type = EventType.ENTERTAINMENT,
+        id = 3,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
 )
 
 val otherEvents = listOf(
     Event(
-        9, "Hikayat Adnan", "https://placehold.co/600x400",
+        id = 3,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
     Event(
-        10, "Enayat Markaza - Eid Al Adha", "https://placehold.co/600x400",
+        id = 3,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
     Event(
-        11, "Idaret Alalaqat Al Insania", "https://placehold.co/600x400",
+        id = 3,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
     Event(
-        12, "The White Room", "https://placehold.co/600x400",
+        id = 3,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
     Event(
-        13, "Classical Music Concert", "https://placehold.co/600x400", date = "12/06/2025",
+        id = 3,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
     Event(
-        14, "Kifaan Qat'ah", "https://placehold.co/600x400",
+        id = 3,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
     Event(
-        15, "Eish Al Hadara", "https://placehold.co/600x400",
+        id = 3,
+        title = "1st Med Diplomacy Program 2025",
+        imageUrl = "https://res.cloudinary.com/dsswvewxx/image/upload/03_xvvb8u.jpg",
+        date = "Jun 13",
+        time = "11:00 PM",
+        location = "Cairo, Cairo Governorate, Egypt",
+        isTrending = true,
+        duration = "2 Days",
+        organizedBy = "IFMSA-Egypt and MTI Students' Scientific Society - MTISSS",
+        type = EventType.EDUCATIONAL,
+        description = "Have you ever thought that a diplomat could be wearing a white coat, holding a stethoscope and an anatomy book? Have you ever imagined that a diplomat could be you?\n" +
+                "Global health requires more than just clinical skills; it demands strong advocacy strategies, a diverse set of skills, and a sturdy representation.\n" +
+                "IFMSA-Egypt is officially launching the Med Diplomacy Programm. Featuring two transformative workshops:\n" +
+                "External Affairs Workshop—Shaping Impact Beyond Borders and Advancing External Relations.\n" +
+                "B4C—Mastering Policy-Making.\n" +
+                "As we advocate for global health, we call for the world to listen. That means our voice must be steady, clear, and confident.\n" +
+                "Now it’s your turn to become the next diplomat to advocate for your cause and credence.\n" +
+                "So are you ready, future diplomat?"
     ),
 
 //    Event(
