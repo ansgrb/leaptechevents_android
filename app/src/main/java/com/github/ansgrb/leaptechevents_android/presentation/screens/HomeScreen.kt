@@ -64,6 +64,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.github.ansgrb.leaptechevents_android.R
 import com.github.ansgrb.leaptechevents_android.data.Event
+import com.github.ansgrb.leaptechevents_android.data.EventType
 import com.github.ansgrb.leaptechevents_android.data.entertainmentEvents
 import com.github.ansgrb.leaptechevents_android.data.musicEvents
 import com.github.ansgrb.leaptechevents_android.data.otherEvents
@@ -131,7 +132,16 @@ fun HomeScreen(
                                         Event(
                                             1,
                                             "Main Event",
-                                            "https://collection.cloudinary.com/dsswvewxx/ba36173a7df92e2ca78d8d0f19d84676"
+                                            "https://collection.cloudinary.com/dsswvewxx/ba36173a7df92e2ca78d8d0f19d84676",
+                                            date = "",
+                                            time = "",
+                                            location = "",
+                                            duration = "",
+                                            isTrending = false,
+                                            organizedBy = "",
+                                            type = EventType.ENTERTAINMENT,
+                                            description = "Join us for the main event of the year! " +
+                                                    "Experience an unforgettable night filled with excitement and entertainment."
                                         )
                                     )
                                 }
@@ -212,7 +222,7 @@ fun HomeScreen(
                             horizontalArrangement = Arrangement.spacedBy(16.dp)
                         ) {
                             items(trendingEvents) { event ->
-                                EventCard(event = event, onClick = onEventClick)
+                                EventCard(event = event, onClick = onEventClick, showTypeChip = true)
                             }
                         }
                         Text(
@@ -280,25 +290,50 @@ fun HomeScreen(
 }
 
 @Composable
-fun EventCard(event: Event, onClick: (Event) -> Unit) {
+fun EventCard(
+    event: Event,
+    onClick: (Event) -> Unit,
+    showTypeChip: Boolean = false // default to false cuz not all sections needs to show the type chip
+) {
     Card(
         modifier = Modifier
             .width(180.dp)
-            .height(220.dp)
+            .height(240.dp)
             .clickable { onClick(event) },
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.cardColors(containerColor = Color.DarkGray)
     ) {
         Column {
-            AsyncImage(
-                model = event.imageUrl,
-                contentDescription = event.title,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(130.dp)
-                    .clip(RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp))
-            )
+            Box {
+                AsyncImage(
+                    model = event.imageUrl,
+                    contentDescription = event.title,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(130.dp)
+                        .clip(RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp))
+                )
+                // Only show type chip if showTypeChip is true
+                if (showTypeChip) {
+                    Card(
+                        modifier = Modifier
+                            .padding(8.dp)
+                            .align(Alignment.TopStart),
+                        colors = CardDefaults.cardColors(
+                            containerColor = Color(0x80000000)
+                        ),
+                        shape = RoundedCornerShape(4.dp)
+                    ) {
+                        Text(
+                            text = event.type.name,
+                            color = Color.White,
+                            fontSize = 10.sp,
+                            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                        )
+                    }
+                }
+            }
             Column(modifier = Modifier.padding(8.dp)) {
                 Text(
                     text = event.title,
