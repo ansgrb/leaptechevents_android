@@ -69,6 +69,7 @@ import com.github.ansgrb.leaptechevents_android.data.entertainmentEvents
 import com.github.ansgrb.leaptechevents_android.data.musicEvents
 import com.github.ansgrb.leaptechevents_android.data.otherEvents
 import com.github.ansgrb.leaptechevents_android.data.trendingEvents
+import com.github.ansgrb.leaptechevents_android.presentation.components.EventsTopAppBar
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -79,38 +80,13 @@ fun HomeScreen(
     onMyTicketsClick: () -> Unit,
     onSignInClick: () -> Unit,
     onMenuClick: () -> Unit,
+    onProfileClick: () -> Unit,
 ) {
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-//                        Text(text = "LeapTech Events")
-                        Image(
-                            painter = painterResource(R.drawable.leaptechlogo),
-                            contentDescription = "LeapTech Logo",
-                            modifier = Modifier.height(30.dp)
-                        )
-                    }
-                },
-                navigationIcon = {
-                    IconButton(onClick = onMenuClick) {
-                        Icon(Icons.Filled.Menu, "Menu", tint = Color.White)
-                    }
-                },
-                actions = {
-                    IconButton(onClick = onSearchClick) {
-                        Icon(Icons.Filled.Person, "Profile", tint = Color.White)
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = colorResource(R.color.dark_purple),
-                    titleContentColor = Color.White
-                )
+            EventsTopAppBar(
+                onMenuClick = onMenuClick,
+                onProfileClick = onProfileClick
             )
         },
         content = { paddingValues ->
@@ -222,7 +198,11 @@ fun HomeScreen(
                             horizontalArrangement = Arrangement.spacedBy(16.dp)
                         ) {
                             items(trendingEvents) { event ->
-                                EventCard(event = event, onClick = onEventClick, showTypeChip = true)
+                                EventCard(
+                                    event = event,
+                                    onClick = onEventClick,
+                                    showTypeChip = true
+                                )
                             }
                         }
                         Text(
@@ -293,7 +273,7 @@ fun HomeScreen(
 fun EventCard(
     event: Event,
     onClick: (Event) -> Unit,
-    showTypeChip: Boolean = false // default to false cuz not all sections needs to show the type chip
+    showTypeChip: Boolean = false, // default to false cuz not all sections needs to show the type chip
 ) {
     Card(
         modifier = Modifier
@@ -372,6 +352,7 @@ fun HomeScreenPreview() {
         onSearchClick = {},
         onMyTicketsClick = {},
         onSignInClick = {},
-        onMenuClick = {}
+        onMenuClick = {},
+        onProfileClick = {}
     )
 }
