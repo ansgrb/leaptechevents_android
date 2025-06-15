@@ -86,6 +86,8 @@ dependencies {
 
     // Image loading
     implementation(libs.coil.compose)
+    implementation("io.coil-kt:coil-svg:2.4.0")
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
 
     // ZXing for QR code generation
     implementation(libs.zx.core)

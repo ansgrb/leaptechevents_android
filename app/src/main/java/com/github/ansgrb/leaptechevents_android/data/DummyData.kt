@@ -45,13 +45,31 @@ data class Event(
 
 val trendingEvents = listOf(
     Event(
-        1, "The Show Live", "https://i.imgur.com/L3k93tM.jpeg", isTrending = true,
-        type = EventType.ENTERTAINMENT,
+        1,
+        "ورشة الرقص الشرقي للسيدات مع شيرين حجازي - Oriental Dance Workshop for Women by Sherin Hegazy",
+        "https://placehold.co/600x400",
+        date = "Friday, June 20, 2025",
+        time = "5:00 PM",
+        location = "18 Emad El Deen Street, Cairo, Egypt",
+        isTrending = true,
+        type = EventType.WORKSHOP,
+        description = "Studio Emad Eddin is pleased to host a special Oriental Dance workshop for women led by dancer and trainer Sherin Hegazy.\n" +
+                "This workshop offers a safe, energy-filled space to explore oriental dance both as an art form and a powerful tool for reconnecting with the body, embracing femininity in a natural, free, and refined way.\n" +
+                "Open to all levels, the workshop balances fun and learning, focusing on the fundamentals and techniques of oriental dance through thoughtful exercises that help participants understand, move, and enjoy their bodies without judgment or comparison.\n" +
+                "Oriental dance is not just about step, it's a body language that allows expression, connection, and inner freedom. We dance to celebrate ourselves, to feel, to heal, and to simply enjoy who we are.\n" +
+                "About the trainer:\n" +
+                "Sherin Hegazy is a dancer, trainer, and movement designer specializing in oriental and contemporary dance. She is the founder of the troupe “Awalem Khafeya”. Her journey began in 1999 with renowned ballet trainer Diana Calenti. In 2008, she joined the Cairo Contemporary Dance Workshop Program at Studio Emad Eddin under Laurence Rondoni, and later completed the “Bothour” trainer’s program (2014/2015) at Ezzat Contemporary Dance Studio.\n" +
+                "Workshop Dates:\n" +
+                "Four days: Friday & Saturday – June 20, 21, 27, 28, 2025\n" +
+                "Time: 5:00 PM to 7:00 PM\n" +
+                "Cost: 1000EGP\n" +
+                "Register now to secure your place!\n" +
+                "https://forms.gle/NKYvjF8EeYokNhqZA\""
     ),
     Event(
         2,
         "Wagef! Comedian Mohamed Helmy",
-        "https://i.imgur.com/G4P4B0r.jpeg",
+        "https://placehold.co/600x400",
         isTrending = true,
         type = EventType.COMEDY,
     ),
@@ -61,12 +79,12 @@ val musicEvents = listOf(
     Event(
         3,
         "Lost In Sound",
-        "https://i.imgur.com/2U2Yd0g.jpeg",
+        "https://placehold.co/600x400",
         type = EventType.MUSIC,
         date = "June 18th, 2025",
     ),
     Event(
-        4, "Firket Al Akhwa", "https://i.imgur.com/T0bC07G.jpeg",
+        4, "Firket Al Akhwa", "https://placehold.co/600x400",
         type = EventType.MUSIC,
     ),
 )
@@ -75,46 +93,46 @@ val entertainmentEvents = listOf(
     Event(
         5,
         "Tamer Hosny & Tamer Ashour",
-        "https://i.imgur.com/x0R6NnI.jpeg",
+        "https://placehold.co/600x400",
         type = EventType.ENTERTAINMENT,
         date = "13 JUN",
     ),
     Event(
         6,
         "Angham",
-        "https://i.imgur.com/R3pXJzU.jpeg",
+        "https://placehold.co/600x400",
         type = EventType.ENTERTAINMENT,
         date = "20 JUNE",
     ),
     Event(
-        7, "J's World - Experience", "https://i.imgur.com/Z4w2f0y.jpeg", type = EventType.ENTERTAINMENT,
+        7, "J's World - Experience", "https://placehold.co/600x400", type = EventType.ENTERTAINMENT,
     ),
     Event(
-        8, "Al Qarya Al Tarfihiya", "https://i.imgur.com/R0X7B93.jpeg", type = EventType.ENTERTAINMENT,
+        8, "Al Qarya Al Tarfihiya", "https://placehold.co/600x400", type = EventType.ENTERTAINMENT,
     ),
 )
 
 val otherEvents = listOf(
     Event(
-        9, "Hikayat Adnan", "https://i.imgur.com/aA6Nl6R.jpeg",
+        9, "Hikayat Adnan", "https://placehold.co/600x400",
     ),
     Event(
-        10, "Enayat Markaza - Eid Al Adha", "https://i.imgur.com/N7b003K.jpeg",
+        10, "Enayat Markaza - Eid Al Adha", "https://placehold.co/600x400",
     ),
     Event(
-        11, "Idaret Alalaqat Al Insania", "https://i.imgur.com/Dckp0E2.jpeg",
+        11, "Idaret Alalaqat Al Insania", "https://placehold.co/600x400",
     ),
     Event(
-        12, "The White Room", "https://i.imgur.com/k6lP0s9.jpeg",
+        12, "The White Room", "https://placehold.co/600x400",
     ),
     Event(
-        13, "Classical Music Concert", "https://i.imgur.com/XGfD8sT.jpeg", date = "12/06/2025",
+        13, "Classical Music Concert", "https://placehold.co/600x400", date = "12/06/2025",
     ),
     Event(
-        14, "Kifaan Qat'ah", "https://i.imgur.com/QhT8jK7.jpeg",
+        14, "Kifaan Qat'ah", "https://placehold.co/600x400",
     ),
     Event(
-        15, "Eish Al Hadara", "https://i.imgur.com/Lp75xJ9.jpeg",
+        15, "Eish Al Hadara", "https://placehold.co/600x400",
     ),
 
 //    Event(
