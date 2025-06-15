@@ -16,6 +16,7 @@
  */
 package com.github.ansgrb.leaptechevents_android.presentation.components
 
+
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -36,11 +37,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.github.ansgrb.leaptechevents_android.R
 
+
 @Composable
 @Preview
 fun GradientButton(
     text: String = "Get Started",
     onClick: () -> Unit = {},
+
     @SuppressLint("ModifierParameter") modifier: Modifier = Modifier
 ) {
     val buttonBrush = Brush.horizontalGradient(
