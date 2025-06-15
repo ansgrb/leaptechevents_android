@@ -9,17 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c08a2830-4432-4336-988d-7cc1ebbb876a" name="Changes" comment="feat: Add network security config and update dummy data&#10;&#10;This commit introduces a network security configuration file to allow cleartext traffic and updates the dummy event data with new image URLs and expanded details.&#10;&#10;Key changes:&#10;- Added `app/src/main/res/xml/network_security_config.xml` to permit cleartext HTTP traffic.&#10;- Updated `DummyData.kt`:&#10;    - Changed placeholder image URLs for events to `https://res.cloudinary.com/dsswvewxx/image/upload/*.jpg`.&#10;    - Expanded the description and details for the first trending event.&#10;    - Updated other event entries with new image URLs and consistent (placeholder) details.">
-      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/data/DummyData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/data/DummyData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/screens/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/screens/HomeScreen.kt" afterDir="false" />
-    </list>
+    <list default="true" id="c08a2830-4432-4336-988d-7cc1ebbb876a" name="Changes" comment="chore: Update IDE project files&#10;&#10;This commit includes updates to IntelliJ IDEA's workspace and deployment target selector configurations.&#10;- Modified `.idea/workspace.xml` by removing specific change list details.&#10;- Updated `.idea/deploymentTargetSelector.xml` by removing a specific run configuration selection state." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +18,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=0N14608I221142C3)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=/home/aghthar/.android/avd/Pixel_9_Pro_API_35.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -94,6 +84,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -580,7 +571,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749989077683</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="chore: Update IDE project files&#10;&#10;This commit includes updates to IntelliJ IDEA's workspace and deployment target selector configurations.&#10;- Modified `.idea/workspace.xml` by removing specific change list details.&#10;- Updated `.idea/deploymentTargetSelector.xml` by removing a specific run configuration selection state.">
+      <option name="closed" value="true" />
+      <created>1749996148175</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1749996148175</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -595,7 +594,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: Define domain layer use cases and repository interfaces&#10;&#10;- Implement use cases for event and ticket operations:&#10;  - `GetEventsUseCase`: Fetches a list of all events.&#10;  - `GetEventDetailsUseCase`: Fetches details for a specific event.&#10;  - `GetTicketsUseCase`: Fetches a list of all tickets.&#10;  - `GetTicketUseCase`: Fetches details for a specific ticket.&#10;  - `BookTicketUseCase`: Books a ticket for an event.&#10;  - `LoginUseCase`: Handles user login.&#10;- Define repository interfaces for data abstraction:&#10;  - `EventRepository`: Defines methods for event data operations, including adding events with optional image URIs.&#10;  - `TicketRepository`: Defines methods for ticket data operations.&#10;  - `UserRepository`: Defines methods for user authentication.&#10;  - `StorageRepository`: Defines methods for image upload and deletion." />
     <MESSAGE value="feat: Implement data repository logic&#10;&#10;- Implement `EventRepositoryImpl` for fetching, getting details, and adding events, including image upload via `StorageRepository`.&#10;- Implement `TicketRepositoryImpl` for fetching, getting details, and booking tickets.&#10;- Implement `UserRepositoryImpl` for user login using Firebase Auth.&#10;- Implement `StorageRepositoryImpl` for uploading and deleting images in Firebase Storage." />
     <MESSAGE value="feat: Implement repository providers in DataModule&#10;&#10;- Add Hilt providers for `EventRepository`, `TicketRepository`, `UserRepository`, and `StorageRepository` implementations.&#10;- These providers inject the necessary Firebase dependencies (Firestore, Auth, Storage) into the respective repository implementations." />
     <MESSAGE value="refactor: Update dependencies and remove unused code&#10;&#10;- Update versions for Kotlin, Compose BOM, Hilt, Firebase services, Coil, Mockito, and other libraries in `libs.versions.toml`.&#10;- Update plugin versions in `build.gradle.kts` (project level).&#10;- Apply new plugins (google-ksp, kotlin-serialization, google-services, firebase-crashlytics, google-hilt) and remove deprecated KSP classpath in `app/build.gradle.kts`.&#10;- Add dependencies for AndroidX Core Splashscreen, Navigation Compose, and Hilt Navigation Compose in `app/build.gradle.kts`.&#10;- Remove unused `Greeting` Composable and its preview from `MainActivity.kt`.&#10;- Comment out NavController initialization in `MainActivity.kt`." />
@@ -620,7 +618,8 @@
     <MESSAGE value="feat: Enhance EventCard with optional type chip and update Event data model&#10;&#10;This commit introduces an optional event type chip to the `EventCard` Composable and updates the `Event` data model with default values and an `EventType` enum.&#10;&#10;Key changes:&#10;- Modified `EventCard.kt`:&#10;    - Added an optional `showTypeChip` boolean parameter (defaulting to `false`).&#10;    - If `showTypeChip` is true, a small `Card` displaying the `event.type.name` is overlaid on the top-start of the event image.&#10;    - Increased the default height of `EventCard` from `220.dp` to `240.dp`.&#10;- Updated `DummyData.kt`:&#10;    - Introduced an `EventType` enum with various event categories (TRENDING, MUSIC, ENTERTAINMENT, etc.).&#10;    - Modified the `Event` data class:&#10;        - Provided default values for all properties.&#10;        - Changed the `type` property from `String` to the new `EventType` enum.&#10;    - Updated `trendingEvents`, `musicEvents`, and `entertainmentEvents` to use the new `EventType`.&#10;- In `HomeScreen.kt`:&#10;    - Set `showTypeChip = true` for `EventCard`s in the &quot;Trending&quot; section.&#10;    - Updated the main event placeholder to include default values for newly added `Event` properties." />
     <MESSAGE value="feat: Add Coil SVG and OkHttp dependencies, and configure ImageLoader&#10;&#10;This commit introduces dependencies for Coil SVG support and OkHttp, and configures a custom `ImageLoader` in the `LeapTechEventsApplication` class.&#10;&#10;Key changes:&#10;- Added `io.coil-kt:coil-svg:2.4.0` and `com.squareup.okhttp3:okhttp:4.11.0` to `app/build.gradle.kts`.&#10;- Modified `LeapTechEventsApplication.kt`:&#10;    - Implemented `ImageLoaderFactory` to provide a custom `ImageLoader`.&#10;    - Configured the `ImageLoader` with:&#10;        - Crossfade enabled.&#10;        - An `OkHttpClient` that follows redirects.&#10;        - Enabled memory and disk cache policies.&#10;        - Memory cache with 25% of available memory.&#10;        - Disk cache in `cacheDir/image_cache` with 2% of disk space.&#10;        - Added `SvgDecoder.Factory()` to support SVG image loading.&#10;- Updated `AndroidManifest.xml`:&#10;    - Added `android:networkSecurityConfig=&quot;@xml/network_security_config&quot;`.&#10;    - Set `android:usesCleartextTraffic=&quot;true&quot;`.&#10;- Updated placeholder image URLs in `DummyData.kt` to `https://placehold.co/600x400` and expanded event details for the first trending event." />
     <MESSAGE value="feat: Add network security config and update dummy data&#10;&#10;This commit introduces a network security configuration file to allow cleartext traffic and updates the dummy event data with new image URLs and expanded details.&#10;&#10;Key changes:&#10;- Added `app/src/main/res/xml/network_security_config.xml` to permit cleartext HTTP traffic.&#10;- Updated `DummyData.kt`:&#10;    - Changed placeholder image URLs for events to `https://res.cloudinary.com/dsswvewxx/image/upload/*.jpg`.&#10;    - Expanded the description and details for the first trending event.&#10;    - Updated other event entries with new image URLs and consistent (placeholder) details." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Add network security config and update dummy data&#10;&#10;This commit introduces a network security configuration file to allow cleartext traffic and updates the dummy event data with new image URLs and expanded details.&#10;&#10;Key changes:&#10;- Added `app/src/main/res/xml/network_security_config.xml` to permit cleartext HTTP traffic.&#10;- Updated `DummyData.kt`:&#10;    - Changed placeholder image URLs for events to `https://res.cloudinary.com/dsswvewxx/image/upload/*.jpg`.&#10;    - Expanded the description and details for the first trending event.&#10;    - Updated other event entries with new image URLs and consistent (placeholder) details." />
+    <MESSAGE value="chore: Update IDE project files&#10;&#10;This commit includes updates to IntelliJ IDEA's workspace and deployment target selector configurations.&#10;- Modified `.idea/workspace.xml` by removing specific change list details.&#10;- Updated `.idea/deploymentTargetSelector.xml` by removing a specific run configuration selection state." />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Update IDE project files&#10;&#10;This commit includes updates to IntelliJ IDEA's workspace and deployment target selector configurations.&#10;- Modified `.idea/workspace.xml` by removing specific change list details.&#10;- Updated `.idea/deploymentTargetSelector.xml` by removing a specific run configuration selection state." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
