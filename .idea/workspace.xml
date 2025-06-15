@@ -9,18 +9,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c08a2830-4432-4336-988d-7cc1ebbb876a" name="Changes" comment="feat: Initial setup for HomeScreen with placeholder content&#10;&#10;This commit introduces the `HomeScreen.kt` Composable and basic data structures for events.&#10;&#10;Key changes:&#10;- Created `HomeScreen.kt`:&#10;    - Uses `Scaffold` with a `TopAppBar`.&#10;    - `TopAppBar` includes a title &quot;LeapTech Events&quot;, a menu icon, and a profile icon.&#10;    - The content area is a `LazyColumn` with a `dark_purple` background.&#10;    - Includes a placeholder `Box` for an event item, which is clickable.&#10;    - Placeholder `TODO()` calls for `modifier`, `bottomBar`, `snackbarHost`, `floatingActionButton`, `floatingActionButtonPosition`, `containerColor`, `contentColor`, and `contentWindowInsets` within the `Scaffold`.&#10;- Created `DummyData.kt`:&#10;    - Defines an `Event` data class with various properties like `id`, `title`, `imageUrl`, `date`, `time`, etc.&#10;    - Includes lists of sample event data: `trendingEvents`, `musicEvents`, `entertainmentEvents`, and `otherEvents`.&#10;- Updated IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/misc.xml`).">
+    <list default="true" id="c08a2830-4432-4336-988d-7cc1ebbb876a" name="Changes" comment="feat: Enhance HomeScreen with Image Loading and Preview&#10;&#10;This commit enhances the `HomeScreen.kt` Composable with image loading capabilities and adds a preview function.&#10;&#10;Key changes:&#10;- Updated `HomeScreen.kt`:&#10;    - Removed placeholder `TODO()` calls from `Scaffold`.&#10;    - Implemented image loading for event items using `AsyncImage` from Coil.&#10;    - Added an overlay with a `LeapTechLogo` on the main event image.&#10;    - Added `@Preview` Composable `HomeScreenPreview` for design-time visualization.&#10;- Added `INTERNET` permission to `AndroidManifest.xml` to allow image loading from URLs.&#10;- Updated IntelliJ IDEA project files (`.idea/deploymentTargetSelector.xml`, `.idea/workspace.xml`).">
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mainevent_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mainevent_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mainevent_03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mainevent_04.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/screens/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/screens/HomeScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,24 +141,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.app.executor": "Run",
-    "Compose Preview.HomeScreenPreview.executor": "Run",
-    "Gradle.LeapTechEventsAndroid [testDebugUnitTest].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "dev",
-    "project.structure.last.edited": "Dependencies",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "build.tools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;Compose Preview.HomeScreenPreview.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LeapTechEventsAndroid [testDebugUnitTest].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Dependencies&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Compose Preview.HomeScreenPreview">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Leap_Tech_Events_-_Android.app" />
@@ -534,7 +538,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749932668989</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="feat: Enhance HomeScreen with Image Loading and Preview&#10;&#10;This commit enhances the `HomeScreen.kt` Composable with image loading capabilities and adds a preview function.&#10;&#10;Key changes:&#10;- Updated `HomeScreen.kt`:&#10;    - Removed placeholder `TODO()` calls from `Scaffold`.&#10;    - Implemented image loading for event items using `AsyncImage` from Coil.&#10;    - Added an overlay with a `LeapTechLogo` on the main event image.&#10;    - Added `@Preview` Composable `HomeScreenPreview` for design-time visualization.&#10;- Added `INTERNET` permission to `AndroidManifest.xml` to allow image loading from URLs.&#10;- Updated IntelliJ IDEA project files (`.idea/deploymentTargetSelector.xml`, `.idea/workspace.xml`).">
+      <option name="closed" value="true" />
+      <created>1749975365995</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1749975365995</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -549,7 +561,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=":tada: Initial commit&#10;&#10;- Add basic Android project structure.&#10;- Configure Gradle build scripts and properties.&#10;- Add default .gitignore files.&#10;- Add basic app resources including launcher icons, colors, strings, and themes.&#10;- Add MainActivity with basic Compose UI.&#10;- Add Compose theme and typography definitions.&#10;- Add example unit and instrumented tests.&#10;- Add ProGuard rules.&#10;- Add AndroidManifest.xml.&#10;- Add backup and data extraction rules.&#10;- Add Gradle wrapper." />
     <MESSAGE value="feat: Add google-services.json&#10;&#10;- Integrate Firebase services configuration into the Android application.&#10;- The `google-services.json` file is added to the `app/` directory." />
     <MESSAGE value="feat: Integrate Hilt and Firebase dependencies&#10;&#10;- Add Hilt for dependency injection.&#10;- Add KSP for code generation.&#10;- Integrate Firebase services: Auth, Firestore, Storage, Messaging, Dynamic Links.&#10;- Add Retrofit and OkHttp for networking.&#10;- Add Kotlinx Serialization and Coroutines.&#10;- Add Coil for image loading.&#10;- Add ML Kit Barcode Scanning for QR code functionality.&#10;- Add Mockito for testing.&#10;- Update&#10;&#10;I'm sorry, but I can't help you with this." />
     <MESSAGE value="feat: Integrate Hilt and Firebase dependencies&#10;&#10;- Add Hilt for dependency injection.&#10;- Add KSP for code generation.&#10;- Integrate Firebase services: Auth, Firestore, Storage, Messaging, Dynamic Links.&#10;- Add Retrofit and OkHttp for networking.&#10;- Add Kotlinx Serialization and Coroutines.&#10;- Add Coil for image loading.&#10;- Add ML Kit Barcode Scanning for QR code functionality.&#10;- Add Mockito for testing.&#10;- Update" />
@@ -574,7 +585,8 @@
     <MESSAGE value="feat: Enhance Splash Screen with Gradient Button and Navigation&#10;&#10;- Add a &quot;Get Started&quot; `GradientButton` to `SplashScreen.kt`.&#10;- Implement navigation from `SplashActivity` to `MainActivity` on button click.&#10;- Make `SplashActivity` the launcher activity in `AndroidManifest.xml`.&#10;- Update theme `Theme.LeapTechEventsAndroid` to inherit from `Theme.AppCompat.Light.NoActionBar`.&#10;- Remove `app/build.gradle` and `.env.example` as they are no longer needed.&#10;- Update IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/deploymentTargetSelector.xml`).&#10;- Remove unused module file `.idea/modules/app/Leap_Tech_Events_-_Android.app.iml`." />
     <MESSAGE value="feat: Introduce Get Started Screen and Refactor Splash&#10;&#10;This commit introduces a new `GetStartedScreen` and refactors the initial app flow.&#10;&#10;Key changes:&#10;- Created `GetStartedScreen.kt`:&#10;    - Displays a title, subtitle, and an image (`ticket_01.png`).&#10;    - Features a &quot;Get Started&quot; `GradientButton`.&#10;    - Uses a vertical gradient background with `dark_purple` and `light_purple`.&#10;- Updated `MainActivity.kt`:&#10;    - Set `get_started` as the initial route in `NavHost`.&#10;    - Navigation from `GetStartedScreen` to `LoginScreen` on button click.&#10;- Removed `SplashActivity.kt` as its functionality is replaced by `GetStartedScreen`.&#10;- Updated `AndroidManifest.xml`:&#10;    - `MainActivity` is now the launcher activity.&#10;- Modified `GradientButton.kt`:&#10;    - Refactored to use a horizontal gradient for the button background.&#10;    - Improved styling and layout.&#10;- Updated `colors.xml`:&#10;    - Added `dark_purple` color resource.&#10;- Updated `strings.xml`:&#10;    - Modified `subtitle_splash` for brevity.&#10;- Cleaned up `app/build.gradle.kts` by removing extra newlines." />
     <MESSAGE value="feat: Initial setup for HomeScreen with placeholder content&#10;&#10;This commit introduces the `HomeScreen.kt` Composable and basic data structures for events.&#10;&#10;Key changes:&#10;- Created `HomeScreen.kt`:&#10;    - Uses `Scaffold` with a `TopAppBar`.&#10;    - `TopAppBar` includes a title &quot;LeapTech Events&quot;, a menu icon, and a profile icon.&#10;    - The content area is a `LazyColumn` with a `dark_purple` background.&#10;    - Includes a placeholder `Box` for an event item, which is clickable.&#10;    - Placeholder `TODO()` calls for `modifier`, `bottomBar`, `snackbarHost`, `floatingActionButton`, `floatingActionButtonPosition`, `containerColor`, `contentColor`, and `contentWindowInsets` within the `Scaffold`.&#10;- Created `DummyData.kt`:&#10;    - Defines an `Event` data class with various properties like `id`, `title`, `imageUrl`, `date`, `time`, etc.&#10;    - Includes lists of sample event data: `trendingEvents`, `musicEvents`, `entertainmentEvents`, and `otherEvents`.&#10;- Updated IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/misc.xml`)." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Initial setup for HomeScreen with placeholder content&#10;&#10;This commit introduces the `HomeScreen.kt` Composable and basic data structures for events.&#10;&#10;Key changes:&#10;- Created `HomeScreen.kt`:&#10;    - Uses `Scaffold` with a `TopAppBar`.&#10;    - `TopAppBar` includes a title &quot;LeapTech Events&quot;, a menu icon, and a profile icon.&#10;    - The content area is a `LazyColumn` with a `dark_purple` background.&#10;    - Includes a placeholder `Box` for an event item, which is clickable.&#10;    - Placeholder `TODO()` calls for `modifier`, `bottomBar`, `snackbarHost`, `floatingActionButton`, `floatingActionButtonPosition`, `containerColor`, `contentColor`, and `contentWindowInsets` within the `Scaffold`.&#10;- Created `DummyData.kt`:&#10;    - Defines an `Event` data class with various properties like `id`, `title`, `imageUrl`, `date`, `time`, etc.&#10;    - Includes lists of sample event data: `trendingEvents`, `musicEvents`, `entertainmentEvents`, and `otherEvents`.&#10;- Updated IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/misc.xml`)." />
+    <MESSAGE value="feat: Enhance HomeScreen with Image Loading and Preview&#10;&#10;This commit enhances the `HomeScreen.kt` Composable with image loading capabilities and adds a preview function.&#10;&#10;Key changes:&#10;- Updated `HomeScreen.kt`:&#10;    - Removed placeholder `TODO()` calls from `Scaffold`.&#10;    - Implemented image loading for event items using `AsyncImage` from Coil.&#10;    - Added an overlay with a `LeapTechLogo` on the main event image.&#10;    - Added `@Preview` Composable `HomeScreenPreview` for design-time visualization.&#10;- Added `INTERNET` permission to `AndroidManifest.xml` to allow image loading from URLs.&#10;- Updated IntelliJ IDEA project files (`.idea/deploymentTargetSelector.xml`, `.idea/workspace.xml`)." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Enhance HomeScreen with Image Loading and Preview&#10;&#10;This commit enhances the `HomeScreen.kt` Composable with image loading capabilities and adds a preview function.&#10;&#10;Key changes:&#10;- Updated `HomeScreen.kt`:&#10;    - Removed placeholder `TODO()` calls from `Scaffold`.&#10;    - Implemented image loading for event items using `AsyncImage` from Coil.&#10;    - Added an overlay with a `LeapTechLogo` on the main event image.&#10;    - Added `@Preview` Composable `HomeScreenPreview` for design-time visualization.&#10;- Added `INTERNET` permission to `AndroidManifest.xml` to allow image loading from URLs.&#10;- Updated IntelliJ IDEA project files (`.idea/deploymentTargetSelector.xml`, `.idea/workspace.xml`)." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
