@@ -11,6 +11,7 @@ import com.github.ansgrb.leaptechevents_android.presentation.screens.BookingScre
 import com.github.ansgrb.leaptechevents_android.presentation.screens.ETicketScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.EventDetailScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.EventListScreen
+import com.github.ansgrb.leaptechevents_android.presentation.screens.GetStartedScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.LoginScreen
 import com.github.ansgrb.leaptechevents_android.presentation.screens.TicketHistoryScreen
 import com.github.ansgrb.leaptechevents_android.ui.theme.LeapTechEventsAndroidTheme
@@ -24,7 +25,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             LeapTechEventsAndroidTheme {
                 val navController = rememberNavController()
-                NavHost(navController, startDestination = "login") {
+                NavHost(navController, startDestination = "get_started") {
+                    composable("get_started") {
+                        GetStartedScreen {
+                            navController.navigate("login") {
+                                popUpTo("get_started") { inclusive = true }
+                            }
+                        }
+                    }
                     composable("login") {
                         LoginScreen(navController)
                     }

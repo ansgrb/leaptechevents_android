@@ -9,7 +9,17 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c08a2830-4432-4336-988d-7cc1ebbb876a" name="Changes" comment="refactor: Update LoginScreen UI using ConstraintLayout&#10;&#10;- Replaced `Column` with `ConstraintLayout` for more flexible UI design.&#10;- Added a &quot;Welcome Back&quot; title.&#10;- Styled `OutlinedTextField` for email and password inputs with leading icons.&#10;- Implemented keyboard options for email and password fields (Email, Password, Next, Done).&#10;- Styled the &quot;Login&quot; button with a rounded shape and adjusted its height and text style.&#10;- Added `androidx.constraintlayout:constraintlayout-compose` dependency." />
+    <list default="true" id="c08a2830-4432-4336-988d-7cc1ebbb876a" name="Changes" comment="feat: Add network security config and update dummy data&#10;&#10;This commit introduces a network security configuration file to allow cleartext traffic and updates the dummy event data with new image URLs and expanded details.&#10;&#10;Key changes:&#10;- Added `app/src/main/res/xml/network_security_config.xml` to permit cleartext HTTP traffic.&#10;- Updated `DummyData.kt`:&#10;    - Changed placeholder image URLs for events to `https://res.cloudinary.com/dsswvewxx/image/upload/*.jpg`.&#10;    - Expanded the description and details for the first trending event.&#10;    - Updated other event entries with new image URLs and consistent (placeholder) details.">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/data/DummyData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/data/DummyData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/screens/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/github/ansgrb/leaptechevents_android/presentation/screens/HomeScreen.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +28,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=/home/aghthar/.android/avd/Pixel_9_Pro_API_35.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=0N14608I221142C3)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -90,6 +100,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -97,22 +108,22 @@
     &quot;assignee&quot;: &quot;ansgrb&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ansgrb/leaptechevents_android.git",
-    "accountId": "2b41818e-6919-4e46-8b9c-2d3fc2f05af2"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ansgrb/leaptechevents_android.git&quot;,
+    &quot;accountId&quot;: &quot;2b41818e-6919-4e46-8b9c-2d3fc2f05af2&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "ansgrb",
-    "repository": "leaptechevents_android"
+    &quot;owner&quot;: &quot;ansgrb&quot;,
+    &quot;repository&quot;: &quot;leaptechevents_android&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -124,21 +135,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.app.executor": "Run",
-    "Gradle.LeapTechEventsAndroid [testDebugUnitTest].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "#2 on dev",
-    "settings.editor.selected.configurable": "build.tools"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;Compose Preview.HomeScreenPreview.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LeapTechEventsAndroid [testDebugUnitTest].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Dependencies&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Android App.app">
+}</component>
+  <component name="RunManager" selected="Compose Preview.HomeScreenPreview">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Leap_Tech_Events_-_Android.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -211,6 +226,79 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HomeScreenPreview" type="ComposePreviewRunConfiguration" temporary="true">
+      <module name="Leap_Tech_Events_-_Android.app" />
+      <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="ALLOW_ASSUME_VERIFIED" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="--es composable com.github.ansgrb.leaptechevents_android.presentation.screens.HomeScreenKt.HomeScreenPreview" />
+      <option name="MODE" value="specific_activity" />
+      <option name="RESTORE_ENABLED" value="false" />
+      <option name="RESTORE_FILE" value="" />
+      <option name="RESTORE_FRESH_INSTALL_ONLY" value="false" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY" value="" />
+      <option name="ACTIVITY_CLASS" value="androidx.compose.ui.tooling.PreviewActivity" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="true" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <compose-preview-run-configuration composable-fqn="com.github.ansgrb.leaptechevents_android.presentation.screens.HomeScreenKt.HomeScreenPreview" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LeapTechEventsAndroid [testDebugUnitTest]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -235,6 +323,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Compose Preview.HomeScreenPreview" />
+        <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
+        <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
+        <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
         <item itemvalue="Gradle.LeapTechEventsAndroid [testDebugUnitTest]" />
       </list>
     </recent_temporary>
@@ -416,7 +508,79 @@
       <option name="project" value="LOCAL" />
       <updated>1749722856947</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feat: Enhance Splash Screen with Gradient Button and Navigation&#10;&#10;- Add a &quot;Get Started&quot; `GradientButton` to `SplashScreen.kt`.&#10;- Implement navigation from `SplashActivity` to `MainActivity` on button click.&#10;- Make `SplashActivity` the launcher activity in `AndroidManifest.xml`.&#10;- Update theme `Theme.LeapTechEventsAndroid` to inherit from `Theme.AppCompat.Light.NoActionBar`.&#10;- Remove `app/build.gradle` and `.env.example` as they are no longer needed.&#10;- Update IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/deploymentTargetSelector.xml`).&#10;- Remove unused module file `.idea/modules/app/Leap_Tech_Events_-_Android.app.iml`.">
+      <option name="closed" value="true" />
+      <created>1749809299959</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1749809299959</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: Introduce Get Started Screen and Refactor Splash&#10;&#10;This commit introduces a new `GetStartedScreen` and refactors the initial app flow.&#10;&#10;Key changes:&#10;- Created `GetStartedScreen.kt`:&#10;    - Displays a title, subtitle, and an image (`ticket_01.png`).&#10;    - Features a &quot;Get Started&quot; `GradientButton`.&#10;    - Uses a vertical gradient background with `dark_purple` and `light_purple`.&#10;- Updated `MainActivity.kt`:&#10;    - Set `get_started` as the initial route in `NavHost`.&#10;    - Navigation from `GetStartedScreen` to `LoginScreen` on button click.&#10;- Removed `SplashActivity.kt` as its functionality is replaced by `GetStartedScreen`.&#10;- Updated `AndroidManifest.xml`:&#10;    - `MainActivity` is now the launcher activity.&#10;- Modified `GradientButton.kt`:&#10;    - Refactored to use a horizontal gradient for the button background.&#10;    - Improved styling and layout.&#10;- Updated `colors.xml`:&#10;    - Added `dark_purple` color resource.&#10;- Updated `strings.xml`:&#10;    - Modified `subtitle_splash` for brevity.&#10;- Cleaned up `app/build.gradle.kts` by removing extra newlines.">
+      <option name="closed" value="true" />
+      <created>1749863667147</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1749863667147</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: Initial setup for HomeScreen with placeholder content&#10;&#10;This commit introduces the `HomeScreen.kt` Composable and basic data structures for events.&#10;&#10;Key changes:&#10;- Created `HomeScreen.kt`:&#10;    - Uses `Scaffold` with a `TopAppBar`.&#10;    - `TopAppBar` includes a title &quot;LeapTech Events&quot;, a menu icon, and a profile icon.&#10;    - The content area is a `LazyColumn` with a `dark_purple` background.&#10;    - Includes a placeholder `Box` for an event item, which is clickable.&#10;    - Placeholder `TODO()` calls for `modifier`, `bottomBar`, `snackbarHost`, `floatingActionButton`, `floatingActionButtonPosition`, `containerColor`, `contentColor`, and `contentWindowInsets` within the `Scaffold`.&#10;- Created `DummyData.kt`:&#10;    - Defines an `Event` data class with various properties like `id`, `title`, `imageUrl`, `date`, `time`, etc.&#10;    - Includes lists of sample event data: `trendingEvents`, `musicEvents`, `entertainmentEvents`, and `otherEvents`.&#10;- Updated IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/misc.xml`).">
+      <option name="closed" value="true" />
+      <created>1749932668989</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1749932668989</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat: Enhance HomeScreen with Image Loading and Preview&#10;&#10;This commit enhances the `HomeScreen.kt` Composable with image loading capabilities and adds a preview function.&#10;&#10;Key changes:&#10;- Updated `HomeScreen.kt`:&#10;    - Removed placeholder `TODO()` calls from `Scaffold`.&#10;    - Implemented image loading for event items using `AsyncImage` from Coil.&#10;    - Added an overlay with a `LeapTechLogo` on the main event image.&#10;    - Added `@Preview` Composable `HomeScreenPreview` for design-time visualization.&#10;- Added `INTERNET` permission to `AndroidManifest.xml` to allow image loading from URLs.&#10;- Updated IntelliJ IDEA project files (`.idea/deploymentTargetSelector.xml`, `.idea/workspace.xml`).">
+      <option name="closed" value="true" />
+      <created>1749975365995</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1749975365995</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: Enhance HomeScreen with Search Bar, Trending Events, and Local Image&#10;&#10;This commit significantly updates the `HomeScreen.kt` Composable to provide a richer user experience.&#10;&#10;Key changes:&#10;- Replaced the `TopAppBar` title text with the `leaptechlogo.png` image.&#10;- Increased the height of the main event image container.&#10;- Replaced the main event `AsyncImage` with a local drawable `mainevent_03.png`.&#10;- Added a non-editable `OutlinedTextField` as a placeholder search bar that triggers `onSearchClick` when clicked.&#10;- Implemented a &quot;Trending 🔥&quot; section using a `LazyRow` to display `EventCard`s.&#10;- Introduced `EventCard` Composable to display individual event details (image, title, date, location).&#10;- Added new drawable assets: `mainevent_01.png`, `mainevent_02.png`, `mainevent_03.png`, and `mainevent_04.png`.&#10;- Enhanced `HomeScreenPreview` with light and dark mode configurations.">
+      <option name="closed" value="true" />
+      <created>1749979499289</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1749979499289</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: Expand HomeScreen with additional event categories&#10;&#10;This commit enhances the `HomeScreen.kt` Composable by adding more categories of events below the &quot;Trending&quot; section.&#10;&#10;Key changes:&#10;- Added `LazyRow` sections for:&#10;    - &quot;Music&quot; events, displaying items from `musicEvents`.&#10;    - &quot;Entertainment&quot; events, displaying items from `entertainmentEvents`.&#10;    - &quot;BackStage Group&quot; events, displaying specific items (id 9 and 10) from `otherEvents`.&#10;    - &quot;Trend&quot; events, displaying specific items (id 11 and 12) from `otherEvents`.&#10;- Each new section includes a title `Text` Composable and uses `EventCard` to display individual events.">
+      <option name="closed" value="true" />
+      <created>1749980025368</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1749980025368</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: Enhance EventCard with optional type chip and update Event data model&#10;&#10;This commit introduces an optional event type chip to the `EventCard` Composable and updates the `Event` data model with default values and an `EventType` enum.&#10;&#10;Key changes:&#10;- Modified `EventCard.kt`:&#10;    - Added an optional `showTypeChip` boolean parameter (defaulting to `false`).&#10;    - If `showTypeChip` is true, a small `Card` displaying the `event.type.name` is overlaid on the top-start of the event image.&#10;    - Increased the default height of `EventCard` from `220.dp` to `240.dp`.&#10;- Updated `DummyData.kt`:&#10;    - Introduced an `EventType` enum with various event categories (TRENDING, MUSIC, ENTERTAINMENT, etc.).&#10;    - Modified the `Event` data class:&#10;        - Provided default values for all properties.&#10;        - Changed the `type` property from `String` to the new `EventType` enum.&#10;    - Updated `trendingEvents`, `musicEvents`, and `entertainmentEvents` to use the new `EventType`.&#10;- In `HomeScreen.kt`:&#10;    - Set `showTypeChip = true` for `EventCard`s in the &quot;Trending&quot; section.&#10;    - Updated the main event placeholder to include default values for newly added `Event` properties.">
+      <option name="closed" value="true" />
+      <created>1749981621555</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1749981621555</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: Add Coil SVG and OkHttp dependencies, and configure ImageLoader&#10;&#10;This commit introduces dependencies for Coil SVG support and OkHttp, and configures a custom `ImageLoader` in the `LeapTechEventsApplication` class.&#10;&#10;Key changes:&#10;- Added `io.coil-kt:coil-svg:2.4.0` and `com.squareup.okhttp3:okhttp:4.11.0` to `app/build.gradle.kts`.&#10;- Modified `LeapTechEventsApplication.kt`:&#10;    - Implemented `ImageLoaderFactory` to provide a custom `ImageLoader`.&#10;    - Configured the `ImageLoader` with:&#10;        - Crossfade enabled.&#10;        - An `OkHttpClient` that follows redirects.&#10;        - Enabled memory and disk cache policies.&#10;        - Memory cache with 25% of available memory.&#10;        - Disk cache in `cacheDir/image_cache` with 2% of disk space.&#10;        - Added `SvgDecoder.Factory()` to support SVG image loading.&#10;- Updated `AndroidManifest.xml`:&#10;    - Added `android:networkSecurityConfig=&quot;@xml/network_security_config&quot;`.&#10;    - Set `android:usesCleartextTraffic=&quot;true&quot;`.&#10;- Updated placeholder image URLs in `DummyData.kt` to `https://placehold.co/600x400` and expanded event details for the first trending event.">
+      <option name="closed" value="true" />
+      <created>1749985602644</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1749985602644</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat: Add network security config and update dummy data&#10;&#10;This commit introduces a network security configuration file to allow cleartext traffic and updates the dummy event data with new image URLs and expanded details.&#10;&#10;Key changes:&#10;- Added `app/src/main/res/xml/network_security_config.xml` to permit cleartext HTTP traffic.&#10;- Updated `DummyData.kt`:&#10;    - Changed placeholder image URLs for events to `https://res.cloudinary.com/dsswvewxx/image/upload/*.jpg`.&#10;    - Expanded the description and details for the first trending event.&#10;    - Updated other event entries with new image URLs and consistent (placeholder) details.">
+      <option name="closed" value="true" />
+      <created>1749989077683</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1749989077683</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -431,12 +595,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=":tada: Initial commit&#10;&#10;- Add basic Android project structure.&#10;- Configure Gradle build scripts and properties.&#10;- Add default .gitignore files.&#10;- Add basic app resources including launcher icons, colors, strings, and themes.&#10;- Add MainActivity with basic Compose UI.&#10;- Add Compose theme and typography definitions.&#10;- Add example unit and instrumented tests.&#10;- Add ProGuard rules.&#10;- Add AndroidManifest.xml.&#10;- Add backup and data extraction rules.&#10;- Add Gradle wrapper." />
-    <MESSAGE value="feat: Add google-services.json&#10;&#10;- Integrate Firebase services configuration into the Android application.&#10;- The `google-services.json` file is added to the `app/` directory." />
-    <MESSAGE value="feat: Integrate Hilt and Firebase dependencies&#10;&#10;- Add Hilt for dependency injection.&#10;- Add KSP for code generation.&#10;- Integrate Firebase services: Auth, Firestore, Storage, Messaging, Dynamic Links.&#10;- Add Retrofit and OkHttp for networking.&#10;- Add Kotlinx Serialization and Coroutines.&#10;- Add Coil for image loading.&#10;- Add ML Kit Barcode Scanning for QR code functionality.&#10;- Add Mockito for testing.&#10;- Update&#10;&#10;I'm sorry, but I can't help you with this." />
-    <MESSAGE value="feat: Integrate Hilt and Firebase dependencies&#10;&#10;- Add Hilt for dependency injection.&#10;- Add KSP for code generation.&#10;- Integrate Firebase services: Auth, Firestore, Storage, Messaging, Dynamic Links.&#10;- Add Retrofit and OkHttp for networking.&#10;- Add Kotlinx Serialization and Coroutines.&#10;- Add Coil for image loading.&#10;- Add ML Kit Barcode Scanning for QR code functionality.&#10;- Add Mockito for testing.&#10;- Update" />
-    <MESSAGE value="feat: Initialize project structure&#10;&#10;- Create directory structure for data, domain, presentation, ui, and utils layers.&#10;- Add placeholder files for screens, view models, use cases, models, repositories, navigation, constants, DI modules, and application class.&#10;- Add copyright headers to all newly created Kotlin files.&#10;- Configure DataModule with Firebase providers for Firestore, Auth, and Storage." />
-    <MESSAGE value="feat: Define data models&#10;&#10;- Create `Event.kt` data class with fields: id, title, date, location, imageUrl, and details.&#10;- Create `Ticket.kt` data class with fields: id, eventId, qrCode, and status.&#10;- Create `User.kt` data class with fields: id, email, and name." />
     <MESSAGE value="feat: Define domain layer use cases and repository interfaces&#10;&#10;- Implement use cases for event and ticket operations:&#10;  - `GetEventsUseCase`: Fetches a list of all events.&#10;  - `GetEventDetailsUseCase`: Fetches details for a specific event.&#10;  - `GetTicketsUseCase`: Fetches a list of all tickets.&#10;  - `GetTicketUseCase`: Fetches details for a specific ticket.&#10;  - `BookTicketUseCase`: Books a ticket for an event.&#10;  - `LoginUseCase`: Handles user login.&#10;- Define repository interfaces for data abstraction:&#10;  - `EventRepository`: Defines methods for event data operations, including adding events with optional image URIs.&#10;  - `TicketRepository`: Defines methods for ticket data operations.&#10;  - `UserRepository`: Defines methods for user authentication.&#10;  - `StorageRepository`: Defines methods for image upload and deletion." />
     <MESSAGE value="feat: Implement data repository logic&#10;&#10;- Implement `EventRepositoryImpl` for fetching, getting details, and adding events, including image upload via `StorageRepository`.&#10;- Implement `TicketRepositoryImpl` for fetching, getting details, and booking tickets.&#10;- Implement `UserRepositoryImpl` for user login using Firebase Auth.&#10;- Implement `StorageRepositoryImpl` for uploading and deleting images in Firebase Storage." />
     <MESSAGE value="feat: Implement repository providers in DataModule&#10;&#10;- Add Hilt providers for `EventRepository`, `TicketRepository`, `UserRepository`, and `StorageRepository` implementations.&#10;- These providers inject the necessary Firebase dependencies (Firestore, Auth, Storage) into the respective repository implementations." />
@@ -452,19 +610,29 @@
     <MESSAGE value="build: Configure Hilt and update dependencies&#10;&#10;- Add Hilt for dependency injection by:&#10;    - Adding `@HiltAndroidApp` to `LeapTechEventsApplication.kt`.&#10;    - Adding `@AndroidEntryPoint` to `MainActivity.kt`.&#10;    - Updating `app/build.gradle.kts` with Hilt and KSP plugin aliases and dependencies.&#10;    - Updating `build.gradle.kts` (project level) with Hilt and KSP plugin aliases.&#10;    - Updating `AndroidManifest.xml` to specify `LeapTechEventsApplication` as the application name.&#10;- Update Kotlin version to 2.0.21 and KSP version to 2.0.21-1.0.28 in `gradle/libs.versions.toml`.&#10;- Update various `.idea` configuration files.&#10;- Add Kotlin error log files to `.kotlin/errors/`." />
     <MESSAGE value="feat: Add Firebase Realtime Database and Login Screen previews&#10;&#10;- Integrate Firebase Realtime Database dependency.&#10;- Add light and dark mode previews for `LoginScreen.kt` using a fake `LoginViewModel` and `LoginUseCase`.&#10;- Modify `LoginViewModel` and `LoginUseCase` to be open for extension in preview fakes." />
     <MESSAGE value="refactor: Update LoginScreen UI using ConstraintLayout&#10;&#10;- Replaced `Column` with `ConstraintLayout` for more flexible UI design.&#10;- Added a &quot;Welcome Back&quot; title.&#10;- Styled `OutlinedTextField` for email and password inputs with leading icons.&#10;- Implemented keyboard options for email and password fields (Email, Password, Next, Done).&#10;- Styled the &quot;Login&quot; button with a rounded shape and adjusted its height and text style.&#10;- Added `androidx.constraintlayout:constraintlayout-compose` dependency." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Update LoginScreen UI using ConstraintLayout&#10;&#10;- Replaced `Column` with `ConstraintLayout` for more flexible UI design.&#10;- Added a &quot;Welcome Back&quot; title.&#10;- Styled `OutlinedTextField` for email and password inputs with leading icons.&#10;- Implemented keyboard options for email and password fields (Email, Password, Next, Done).&#10;- Styled the &quot;Login&quot; button with a rounded shape and adjusted its height and text style.&#10;- Added `androidx.constraintlayout:constraintlayout-compose` dependency." />
+    <MESSAGE value="feat: Implement Splash Screen with Jetpack Compose&#10;&#10;This commit introduces a splash screen for the application, built using Jetpack Compose.&#10;&#10;Key changes:&#10;- Added `SplashActivity.kt` containing the `SplashScreen` Composable.&#10;- The splash screen features:&#10;    - A background image (`abstractbackground.png`).&#10;    - A title with styled text (&quot;Discover your Future Events Easily&quot;).&#10;    - A subtitle string.&#10;    - An image (`ticket_01.png`).&#10;- Added new color resources: `gold`, `pink`, `light_pink`, `light_purple`.&#10;- Added new string resource `subtitle_splash`.&#10;- Included new drawable assets: `abstractbackground.png`, `leaptechlogo.png`, `ticket_01.png`, and `ticket_04.png`.&#10;- Updated `AndroidManifest.xml` to declare `SplashActivity`.&#10;- Added dependencies for `appcompat`, `material`, and `activity` in `build.gradle.kts` and `libs.versions.toml`.&#10;- Configured Gradle JVM to `jbr-21` in `.idea/gradle.xml`.&#10;- Updated deployment target selector in `.idea/deploymentTargetSelector.xml`.&#10;- Added a `GradientButton.kt` Composable (currently a placeholder)." />
+    <MESSAGE value="feat: Enhance Splash Screen with Gradient Button and Navigation&#10;&#10;- Add a &quot;Get Started&quot; `GradientButton` to `SplashScreen.kt`.&#10;- Implement navigation from `SplashActivity` to `MainActivity` on button click.&#10;- Make `SplashActivity` the launcher activity in `AndroidManifest.xml`.&#10;- Update theme `Theme.LeapTechEventsAndroid` to inherit from `Theme.AppCompat.Light.NoActionBar`.&#10;- Remove `app/build.gradle` and `.env.example` as they are no longer needed.&#10;- Update IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/deploymentTargetSelector.xml`).&#10;- Remove unused module file `.idea/modules/app/Leap_Tech_Events_-_Android.app.iml`." />
+    <MESSAGE value="feat: Introduce Get Started Screen and Refactor Splash&#10;&#10;This commit introduces a new `GetStartedScreen` and refactors the initial app flow.&#10;&#10;Key changes:&#10;- Created `GetStartedScreen.kt`:&#10;    - Displays a title, subtitle, and an image (`ticket_01.png`).&#10;    - Features a &quot;Get Started&quot; `GradientButton`.&#10;    - Uses a vertical gradient background with `dark_purple` and `light_purple`.&#10;- Updated `MainActivity.kt`:&#10;    - Set `get_started` as the initial route in `NavHost`.&#10;    - Navigation from `GetStartedScreen` to `LoginScreen` on button click.&#10;- Removed `SplashActivity.kt` as its functionality is replaced by `GetStartedScreen`.&#10;- Updated `AndroidManifest.xml`:&#10;    - `MainActivity` is now the launcher activity.&#10;- Modified `GradientButton.kt`:&#10;    - Refactored to use a horizontal gradient for the button background.&#10;    - Improved styling and layout.&#10;- Updated `colors.xml`:&#10;    - Added `dark_purple` color resource.&#10;- Updated `strings.xml`:&#10;    - Modified `subtitle_splash` for brevity.&#10;- Cleaned up `app/build.gradle.kts` by removing extra newlines." />
+    <MESSAGE value="feat: Initial setup for HomeScreen with placeholder content&#10;&#10;This commit introduces the `HomeScreen.kt` Composable and basic data structures for events.&#10;&#10;Key changes:&#10;- Created `HomeScreen.kt`:&#10;    - Uses `Scaffold` with a `TopAppBar`.&#10;    - `TopAppBar` includes a title &quot;LeapTech Events&quot;, a menu icon, and a profile icon.&#10;    - The content area is a `LazyColumn` with a `dark_purple` background.&#10;    - Includes a placeholder `Box` for an event item, which is clickable.&#10;    - Placeholder `TODO()` calls for `modifier`, `bottomBar`, `snackbarHost`, `floatingActionButton`, `floatingActionButtonPosition`, `containerColor`, `contentColor`, and `contentWindowInsets` within the `Scaffold`.&#10;- Created `DummyData.kt`:&#10;    - Defines an `Event` data class with various properties like `id`, `title`, `imageUrl`, `date`, `time`, etc.&#10;    - Includes lists of sample event data: `trendingEvents`, `musicEvents`, `entertainmentEvents`, and `otherEvents`.&#10;- Updated IntelliJ IDEA project files (`.idea/workspace.xml`, `.idea/misc.xml`)." />
+    <MESSAGE value="feat: Enhance HomeScreen with Image Loading and Preview&#10;&#10;This commit enhances the `HomeScreen.kt` Composable with image loading capabilities and adds a preview function.&#10;&#10;Key changes:&#10;- Updated `HomeScreen.kt`:&#10;    - Removed placeholder `TODO()` calls from `Scaffold`.&#10;    - Implemented image loading for event items using `AsyncImage` from Coil.&#10;    - Added an overlay with a `LeapTechLogo` on the main event image.&#10;    - Added `@Preview` Composable `HomeScreenPreview` for design-time visualization.&#10;- Added `INTERNET` permission to `AndroidManifest.xml` to allow image loading from URLs.&#10;- Updated IntelliJ IDEA project files (`.idea/deploymentTargetSelector.xml`, `.idea/workspace.xml`)." />
+    <MESSAGE value="feat: Enhance HomeScreen with Search Bar, Trending Events, and Local Image&#10;&#10;This commit significantly updates the `HomeScreen.kt` Composable to provide a richer user experience.&#10;&#10;Key changes:&#10;- Replaced the `TopAppBar` title text with the `leaptechlogo.png` image.&#10;- Increased the height of the main event image container.&#10;- Replaced the main event `AsyncImage` with a local drawable `mainevent_03.png`.&#10;- Added a non-editable `OutlinedTextField` as a placeholder search bar that triggers `onSearchClick` when clicked.&#10;- Implemented a &quot;Trending &quot; section using a `LazyRow` to display `EventCard`s.&#10;- Introduced `EventCard` Composable to display individual event details (image, title, date, location).&#10;- Added new drawable assets: `mainevent_01.png`, `mainevent_02.png`, `mainevent_03.png`, and `mainevent_04.png`.&#10;- Enhanced `HomeScreenPreview` with light and dark mode configurations." />
+    <MESSAGE value="feat: Expand HomeScreen with additional event categories&#10;&#10;This commit enhances the `HomeScreen.kt` Composable by adding more categories of events below the &quot;Trending&quot; section.&#10;&#10;Key changes:&#10;- Added `LazyRow` sections for:&#10;    - &quot;Music&quot; events, displaying items from `musicEvents`.&#10;    - &quot;Entertainment&quot; events, displaying items from `entertainmentEvents`.&#10;    - &quot;BackStage Group&quot; events, displaying specific items (id 9 and 10) from `otherEvents`.&#10;    - &quot;Trend&quot; events, displaying specific items (id 11 and 12) from `otherEvents`.&#10;- Each new section includes a title `Text` Composable and uses `EventCard` to display individual events." />
+    <MESSAGE value="feat: Enhance EventCard with optional type chip and update Event data model&#10;&#10;This commit introduces an optional event type chip to the `EventCard` Composable and updates the `Event` data model with default values and an `EventType` enum.&#10;&#10;Key changes:&#10;- Modified `EventCard.kt`:&#10;    - Added an optional `showTypeChip` boolean parameter (defaulting to `false`).&#10;    - If `showTypeChip` is true, a small `Card` displaying the `event.type.name` is overlaid on the top-start of the event image.&#10;    - Increased the default height of `EventCard` from `220.dp` to `240.dp`.&#10;- Updated `DummyData.kt`:&#10;    - Introduced an `EventType` enum with various event categories (TRENDING, MUSIC, ENTERTAINMENT, etc.).&#10;    - Modified the `Event` data class:&#10;        - Provided default values for all properties.&#10;        - Changed the `type` property from `String` to the new `EventType` enum.&#10;    - Updated `trendingEvents`, `musicEvents`, and `entertainmentEvents` to use the new `EventType`.&#10;- In `HomeScreen.kt`:&#10;    - Set `showTypeChip = true` for `EventCard`s in the &quot;Trending&quot; section.&#10;    - Updated the main event placeholder to include default values for newly added `Event` properties." />
+    <MESSAGE value="feat: Add Coil SVG and OkHttp dependencies, and configure ImageLoader&#10;&#10;This commit introduces dependencies for Coil SVG support and OkHttp, and configures a custom `ImageLoader` in the `LeapTechEventsApplication` class.&#10;&#10;Key changes:&#10;- Added `io.coil-kt:coil-svg:2.4.0` and `com.squareup.okhttp3:okhttp:4.11.0` to `app/build.gradle.kts`.&#10;- Modified `LeapTechEventsApplication.kt`:&#10;    - Implemented `ImageLoaderFactory` to provide a custom `ImageLoader`.&#10;    - Configured the `ImageLoader` with:&#10;        - Crossfade enabled.&#10;        - An `OkHttpClient` that follows redirects.&#10;        - Enabled memory and disk cache policies.&#10;        - Memory cache with 25% of available memory.&#10;        - Disk cache in `cacheDir/image_cache` with 2% of disk space.&#10;        - Added `SvgDecoder.Factory()` to support SVG image loading.&#10;- Updated `AndroidManifest.xml`:&#10;    - Added `android:networkSecurityConfig=&quot;@xml/network_security_config&quot;`.&#10;    - Set `android:usesCleartextTraffic=&quot;true&quot;`.&#10;- Updated placeholder image URLs in `DummyData.kt` to `https://placehold.co/600x400` and expanded event details for the first trending event." />
+    <MESSAGE value="feat: Add network security config and update dummy data&#10;&#10;This commit introduces a network security configuration file to allow cleartext traffic and updates the dummy event data with new image URLs and expanded details.&#10;&#10;Key changes:&#10;- Added `app/src/main/res/xml/network_security_config.xml` to permit cleartext HTTP traffic.&#10;- Updated `DummyData.kt`:&#10;    - Changed placeholder image URLs for events to `https://res.cloudinary.com/dsswvewxx/image/upload/*.jpg`.&#10;    - Expanded the description and details for the first trending event.&#10;    - Updated other event entries with new image URLs and consistent (placeholder) details." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add network security config and update dummy data&#10;&#10;This commit introduces a network security configuration file to allow cleartext traffic and updates the dummy event data with new image URLs and expanded details.&#10;&#10;Key changes:&#10;- Added `app/src/main/res/xml/network_security_config.xml` to permit cleartext HTTP traffic.&#10;- Updated `DummyData.kt`:&#10;    - Changed placeholder image URLs for events to `https://res.cloudinary.com/dsswvewxx/image/upload/*.jpg`.&#10;    - Expanded the description and details for the first trending event.&#10;    - Updated other event entries with new image URLs and consistent (placeholder) details." />
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">
       <map>
         <entry key="com.github.ansgrb.leaptechevents_android">
           <value>
-            <CheckInfo lastCheckTimestamp="1749614543131" />
+            <CheckInfo lastCheckTimestamp="1749974908764" />
           </value>
         </entry>
         <entry key="com.github.ansgrb.leaptechevents_android.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1749614543129" />
+            <CheckInfo lastCheckTimestamp="1749974908762" />
           </value>
         </entry>
       </map>
