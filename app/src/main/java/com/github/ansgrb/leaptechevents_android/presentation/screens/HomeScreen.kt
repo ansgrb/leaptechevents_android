@@ -64,6 +64,9 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.github.ansgrb.leaptechevents_android.R
 import com.github.ansgrb.leaptechevents_android.data.Event
+import com.github.ansgrb.leaptechevents_android.data.entertainmentEvents
+import com.github.ansgrb.leaptechevents_android.data.musicEvents
+import com.github.ansgrb.leaptechevents_android.data.otherEvents
 import com.github.ansgrb.leaptechevents_android.data.trendingEvents
 
 
@@ -209,6 +212,62 @@ fun HomeScreen(
                             horizontalArrangement = Arrangement.spacedBy(16.dp)
                         ) {
                             items(trendingEvents) { event ->
+                                EventCard(event = event, onClick = onEventClick)
+                            }
+                        }
+                        Text(
+                            text = "Music",
+                            color = Color.White,
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(vertical = 8.dp)
+                        )
+                        LazyRow(
+                            horizontalArrangement = Arrangement.spacedBy(16.dp)
+                        ) {
+                            items(musicEvents) { event ->
+                                EventCard(event = event, onClick = onEventClick)
+                            }
+                        }
+                        Text(
+                            text = "Entertainment",
+                            color = Color.White,
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(vertical = 8.dp)
+                        )
+                        LazyRow(
+                            horizontalArrangement = Arrangement.spacedBy(16.dp)
+                        ) {
+                            items(entertainmentEvents) { event ->
+                                EventCard(event = event, onClick = onEventClick)
+                            }
+                        }
+                        Text(
+                            text = "BackStage Group",
+                            color = Color.White,
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(vertical = 8.dp)
+                        )
+                        LazyRow(
+                            horizontalArrangement = Arrangement.spacedBy(16.dp)
+                        ) {
+                            items(otherEvents.filter { it.id == 9 || it.id == 10 }) { event ->
+                                EventCard(event = event, onClick = onEventClick)
+                            }
+                        }
+                        Text(
+                            text = "Trend",
+                            color = Color.White,
+                            fontSize = 20.sp,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(vertical = 8.dp)
+                        )
+                        LazyRow(
+                            horizontalArrangement = Arrangement.spacedBy(16.dp)
+                        ) {
+                            items(otherEvents.filter { it.id == 11 || it.id == 12 }) { event ->
                                 EventCard(event = event, onClick = onEventClick)
                             }
                         }
